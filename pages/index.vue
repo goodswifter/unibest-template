@@ -5,10 +5,6 @@
   </div>
 </template>
 
-<script setup>
-// 首页逻辑可以在这里添加
-</script>
-
 <style scoped>
 .container {
   max-width: 1200px;
