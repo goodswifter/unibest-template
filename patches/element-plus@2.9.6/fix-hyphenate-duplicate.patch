@@ -1,0 +1,14 @@
+diff --git a/node_modules/element-plus/es/utils/strings.mjs b/node_modules/element-plus/es/utils/strings.mjs
+index 1234567..abcdefg 100644
+--- a/node_modules/element-plus/es/utils/strings.mjs
++++ b/node_modules/element-plus/es/utils/strings.mjs
+@@ -4,8 +4,7 @@ import { capitalize as capitalize$1 } from '@vue/shared';
+ 
+ const escapeStringRegexp = (string = "") => string.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&").replace(/-/g, "\\x2d");
+ const camelize = shared_cjs_prodExports.camelize;
+-const hyphenate = shared_cjs_prodExports.hyphenate;
+-const hyphenate = shared_cjs_prodExports.hyphenate;
++const hyphenate = shared_cjs_prodExports.hyphenate; 
+ export { camelize, capitalize, escapeStringRegexp, hyphenate, hyphenate as kebabCase };
+ 
+ //# sourceMappingURL=strings.mjs.map 

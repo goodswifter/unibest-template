@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  app: { keepalive: true },
   modules: ['@nuxt/eslint', '@nuxt/icon', '@nuxt/image', '@element-plus/nuxt', '@unocss/nuxt'],
   unocss: {
     // 使用项目中的UnoCSS配置
@@ -19,5 +20,22 @@ export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0', // 设置为 true 使用局域网 IP
     port: 3700,
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        onwarn(warning, warn) {
+          if (warning.code === 'SOURCEMAP_ERROR' || warning.message.includes('hyphenate')) {
+            return
+          }
+          warn(warning)
+        },
+      },
+    },
+    esbuild: {
+      logOverride: {
+        'duplicate-declaration': 'silent',
+      },
+    },
   },
 })
