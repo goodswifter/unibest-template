@@ -17,19 +17,30 @@
           <strong>useNuxtApp</strong>
           判断:
         </p>
-        <pre class="mt-2 bg-gray-100 p-2">{{ nuxtAppInfo }}</pre>
+        <client-only>
+          <pre class="mt-2 bg-gray-100 p-2">{{ nuxtAppInfo }}</pre>
+          <template #fallback>
+            <pre class="mt-2 bg-gray-100 p-2">{ "服务端渲染中..." }</pre>
+          </template>
+        </client-only>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { computed, onMounted } from 'vue'
+
 const nuxtApp = useNuxtApp()
 const nuxtAppInfo = computed(() => {
-  return {
-    isHydrating: nuxtApp.isHydrating,
-    payload: nuxtApp.payload,
+  // 仅在客户端环境中获取数据
+  if (import.meta.client) {
+    return {
+      isHydrating: nuxtApp.isHydrating,
+      payload: nuxtApp.payload,
+    }
   }
+  return {}
 })
 
 // 在服务端渲染时执行

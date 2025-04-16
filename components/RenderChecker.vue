@@ -4,11 +4,17 @@
     <div>
       <p>
         <span class="font-medium">服务端渲染状态:</span>
-        {{ ssrStatus }}
+        <client-only>
+          {{ clientSsrStatus }}
+          <template #fallback>{{ serverSsrStatus }}</template>
+        </client-only>
       </p>
       <p>
         <span class="font-medium">当前环境:</span>
-        {{ environment }}
+        <client-only>
+          {{ clientEnvironment }}
+          <template #fallback>{{ serverEnvironment }}</template>
+        </client-only>
       </p>
       <p v-if="hydrated"><span class="font-medium">客户端水合完成</span></p>
     </div>
@@ -16,8 +22,13 @@
 </template>
 
 <script setup>
-const ssrStatus = import.meta.server ? '开启' : '关闭'
-const environment = import.meta.server ? '服务器端' : '客户端'
+import { ref, onMounted } from 'vue'
+
+// 在服务端和客户端分别定义值
+const serverSsrStatus = '开启'
+const serverEnvironment = '服务器端'
+const clientSsrStatus = '关闭'
+const clientEnvironment = '客户端'
 
 // 跟踪水合状态
 const hydrated = ref(false)
@@ -26,7 +37,7 @@ const hydrated = ref(false)
 onMounted(() => {
   hydrated.value = true
   console.log('客户端渲染: 组件已挂载')
-  console.log('当前环境:', import.meta.server ? '服务器端' : '客户端')
+  console.log('当前环境: 客户端')
 })
 
 // 这段代码会在服务端和客户端都执行
