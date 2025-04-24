@@ -2,6 +2,7 @@
   <div class="container">
     <h1>欢迎来到我的 Nuxt 3 应用</h1>
     <p>这是首页内容</p>
+    <button>点击我</button>
   </div>
 </template>
 

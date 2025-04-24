@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mb-16 text-2xl font-bold">UnoCSS 演示</h2>
+    <h2 class="mb-16 cursor-pointer text-2xl font-bold" bg-red>UnoCSS 演示1</h2>
 
     <div class="space-y-32">
       <!-- 颜色系统 -->
@@ -67,3 +67,9 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.btn {
+  --at-apply: bg-primary-500 'hover:bg-primary-600' text-white px-4 py-2 rounded;
+}
+</style>
