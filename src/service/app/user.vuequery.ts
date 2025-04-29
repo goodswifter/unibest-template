@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-ignore
-import { queryOptions, useMutation } from '@tanstack/vue-query';
+import { useQuery, useMutation } from '@tanstack/vue-query';
 import type { DefaultError } from '@tanstack/vue-query';
 import request from '@/utils/request';
 import { CustomRequestOptions } from '@/interceptors/request';
@@ -34,12 +34,12 @@ export function getUserByNameQueryOptions(options: {
   params: API.getUserByNameParams;
   options?: CustomRequestOptions;
 }) {
-  return queryOptions({
-    queryFn: async ({ queryKey }) => {
-      return apis.getUserByName(queryKey[1] as typeof options);
-    },
+  return {
     queryKey: ['getUserByName', options],
-  });
+    queryFn: async () => {
+      return apis.getUserByName(options);
+    },
+  };
 }
 
 /** Updated user This can only be done by the logged in user. PUT /user/${param0} */
@@ -128,22 +128,22 @@ export function loginUserQueryOptions(options: {
   params: API.loginUserParams;
   options?: CustomRequestOptions;
 }) {
-  return queryOptions({
-    queryFn: async ({ queryKey }) => {
-      return apis.loginUser(queryKey[1] as typeof options);
-    },
+  return {
     queryKey: ['loginUser', options],
-  });
+    queryFn: async () => {
+      return apis.loginUser(options);
+    },
+  };
 }
 
 /** Logs out current logged in user session 返回值: successful operation GET /user/logout */
 export function logoutUserQueryOptions(options: {
   options?: CustomRequestOptions;
 }) {
-  return queryOptions({
-    queryFn: async ({ queryKey }) => {
-      return apis.logoutUser(queryKey[1] as typeof options);
-    },
+  return {
     queryKey: ['logoutUser', options],
-  });
+    queryFn: async () => {
+      return apis.logoutUser(options);
+    },
+  };
 }
