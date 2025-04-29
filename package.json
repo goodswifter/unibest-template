@@ -103,8 +103,8 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4050720250324001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4050720250324001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4050720250324001",
-    "abortcontroller-polyfill": "^1.7.8",
     "@tanstack/vue-query": "^4.36.1",
+    "abortcontroller-polyfill": "^1.7.8",
     "dayjs": "1.11.13",
     "pinia": "2.0.36",
     "pinia-plugin-persistedstate": "3.2.1",
@@ -135,6 +135,7 @@
     "@uni-helper/vite-plugin-uni-manifest": "^0.2.8",
     "@uni-helper/vite-plugin-uni-pages": "^0.2.28",
     "@uni-helper/vite-plugin-uni-platform": "^0.0.4",
+    "@unocss/eslint-config": "66.1.0-beta.12",
     "@unocss/preset-attributify": "^66.0.0",
     "@unocss/preset-icons": "^66.0.0",
     "@unocss/preset-legacy-compat": "^66.0.0",
@@ -149,6 +150,7 @@
     "eslint-import-resolver-typescript": "^4.3.4",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "eslint-plugin-vue": "^10.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
@@ -167,12 +169,13 @@
     "stylelint-prettier": "^5.0.3",
     "terser": "^5.39.0",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.1",
     "unocss": "^0.58.9",
     "unocss-applet": "^0.7.8",
     "unplugin-auto-import": "^19.1.2",
     "vite": "^5.2.8",
     "vite-plugin-restart": "^0.4.2",
-    "vue-tsc": "^2.2.10",
-    "vue-eslint-parser": "^10.0.0"
+    "vue-eslint-parser": "^10.0.0",
+    "vue-tsc": "^2.2.10"
   }
 }

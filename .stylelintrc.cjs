@@ -29,14 +29,12 @@ module.exports = {
     // 允许 global 、export 、v-deep等伪类
     'selector-pseudo-class-no-unknown': [
       true,
-      {
-        ignorePseudoClasses: ['global', 'export', 'v-deep', 'deep'],
+      { ignorePseudoClasses: ['global', 'export', 'v-deep', 'deep'],
       },
     ],
     'unit-no-unknown': [
       true,
-      {
-        ignoreUnits: ['rpx'],
+      { ignoreUnits: ['rpx'],
       },
     ],
     // 处理小程序page标签不认识的问题
