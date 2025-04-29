@@ -1,37 +1,40 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "target": "es2015", // 指定编译目标版本
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "composite": true,
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "preserve",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false, // 允许隐式 any 类型
-
-    /* path */
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "noImplicitThis": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      // 用于设置模块名到基于baseUrl的路径映射
-      "@/*": ["src/*"],
-      "@build/*": ["build/*"]
+      "@/*": ["./src/*"]
     },
-    "types": ["@types/node", "@nuxt/types", "@nuxt/schema"],
-    // "types": ["vite/client"], // 指定模块类型，但同时隐藏了默认node_modules/@types下的类型，可以更精细化处理类型提升编译速度
-    "allowSyntheticDefaultImports": true // 允许合成默认导入
-  }
+    "outDir": "dist",
+    "lib": ["esnext", "dom"],
+    "types": [
+      "@dcloudio/types",
+      "@uni-helper/uni-types",
+      "@types/wechat-miniprogram",
+      "wot-design-uni/global.d.ts",
+      "z-paging/types",
+      "./src/typings.d.ts"
+    ]
+  },
+  "vueCompilerOptions": {
+    "plugins": ["@uni-helper/uni-types/volar-plugin"]
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.jsx",
+    "src/**/*.vue",
+    "src/**/*.json"
+  ]
 }

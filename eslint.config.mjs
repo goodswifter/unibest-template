@@ -1,22 +1,37 @@
-// @ts-nocheck
-import withNuxt from './.nuxt/eslint.config.mjs'
-import prettier from 'eslint-plugin-prettier'
-import unocss from '@unocss/eslint-config/flat'
+import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
+import prettier from 'eslint-plugin-prettier'
 import importPlugin from 'eslint-plugin-import'
 import unusedImports from 'eslint-plugin-unused-imports'
+import { createRequire } from 'module'
+import unocss from '@unocss/eslint-config/flat'
+import eslintIgnore from './eslint.ignore.mjs'
 
-export default withNuxt([
+const require = createRequire(import.meta.url)
+const autoImportGlobals = require('./.eslintrc-auto-import.json')
+
+export default [
   pluginJs.configs.recommended,
   // 原来的extends替换为如下模式
   ...tseslint.configs.recommended,
+  // ...pluginVue.configs['flat/essential'], // Vue 基础规则
+  // ...pluginVue.configs['flat/recommended'], // Vue 推荐规则
   ...pluginVue.configs['flat/strongly-recommended'], // Vue 强烈推荐规则
   unocss,
+  // languageOptions：配置如何检查 js 代码
   {
-    plugins: { prettier, importPlugin, unusedImports },
+    // 1.1 处理 与 JavaScript 相关的配置项
+    ignores: eslintIgnore,
     languageOptions: {
+      // 1.11 定义可用的全局变量
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...autoImportGlobals.globals,
+      },
+      // 1.12 扩展
       parserOptions: {
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.vue'],
@@ -24,6 +39,10 @@ export default withNuxt([
         sourceType: 'module',
       },
     },
+  },
+  {
+    ignores: eslintIgnore,
+    plugins: { prettier, importPlugin, unusedImports },
     rules: {
       // ----------------------  prettier  ----------------------
       'prettier/prettier': 'warn',
@@ -72,6 +91,8 @@ export default withNuxt([
       'vue/attributes-order': 'error', // 强制属性顺序
       'vue/padding-line-between-blocks': 'error', // 强制块之间的间距
       'vue/no-empty-component-block': 'error', // 禁止空的组件块报错
+      // ✅ 强制 template > script > style
+      'vue/component-tags-order': ['error', { order: ['template', 'script', 'style'] }],
       // ✅ 强制单行属性
       'vue/max-attributes-per-line': 'off',
       'vue/singleline-html-element-content-newline': 'off',
@@ -100,4 +121,4 @@ export default withNuxt([
       'unusedImports/no-unused-imports': 'warn', // 自动移除import中未使用的变量和参数
     },
   },
-])
+]

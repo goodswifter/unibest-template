@@ -1,42 +1,12 @@
-# 构建产物
-.nuxt
-dist
-.output
-node_modules
+# unplugin-auto-import 生成的类型文件，每次提交都改变，所以加入这里吧，与 .gitignore 配合使用
+auto-import.d.ts
 
-# 缓存
-.cache
-public/_nuxt
+# vite-plugin-uni-pages 生成的类型文件，每次切换分支都一堆不同的，所以直接 .gitignore
+uni-pages.d.ts
 
-# 本地环境
-.env
-.env.*
-!.env.example
+# 插件生成的文件
+src/pages.json
+src/manifest.json
 
-# 日志
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# 锁文件
-package-lock.json
-pnpm-lock.yaml
-yarn.lock
-
-# 编辑器目录和文件
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# 自动生成的文件
-.DS_Store
-*.pem 
+# 忽略自动生成文件
+src/service/app/**
