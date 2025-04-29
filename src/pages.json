@@ -37,20 +37,21 @@
       }
     ]
   },
+  "__esModule": true,
   "pages": [
     {
       "path": "pages/index/index",
       "type": "home",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": "首页"
+        "navigationBarTitleText": "首页1"
       }
     },
     {
       "path": "pages/about/about",
       "type": "page",
       "style": {
-        "navigationBarTitleText": "关于"
+        "navigationBarTitleText": "关于2"
       }
     }
   ],

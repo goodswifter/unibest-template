@@ -3,7 +3,7 @@
 {
   style: {
     navigationStyle: 'custom',
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: '首页1',
   },
 }
 </route>

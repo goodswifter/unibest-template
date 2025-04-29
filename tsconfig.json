@@ -15,12 +15,11 @@
     },
     "outDir": "dist",
     "lib": ["esnext", "dom"],
+    "target": "esnext",
     "types": [
       "@dcloudio/types",
       "@uni-helper/uni-types",
       "@types/wechat-miniprogram",
-      "wot-design-uni/global.d.ts",
-      "z-paging/types",
       "./src/typings.d.ts"
     ]
   },

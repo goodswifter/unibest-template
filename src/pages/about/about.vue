@@ -1,7 +1,7 @@
 <route lang="json5">
 {
   style: {
-    navigationBarTitleText: '关于',
+    navigationBarTitleText: '关于2',
   },
 }
 </route>

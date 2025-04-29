@@ -74,7 +74,7 @@ export default ({ command, mode }) => {
             plugin.api.options.devToolsEnabled = false
           }
         },
-      },
+      } as any,
       UnoCSS(),
       AutoImport({
         imports: ['vue', 'uni-app'],

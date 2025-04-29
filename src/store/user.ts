@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const initState = { nickname: '', avatar: '' }
 
@@ -29,7 +29,6 @@ export const useUserStore = defineStore(
       reset,
     }
   },
-  {
-    persist: true,
+  { persist: true,
   },
 )
