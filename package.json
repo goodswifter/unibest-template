@@ -103,7 +103,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4050720250324001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4050720250324001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4050720250324001",
-    "@tanstack/vue-query": "^4.36.1",
+    "@tanstack/vue-query": "^5.74.7",
     "abortcontroller-polyfill": "^1.7.8",
     "dayjs": "1.11.13",
     "pinia": "2.0.36",
