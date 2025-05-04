@@ -3,3 +3,4 @@
 
 # Run the pre-commit hook
 # npx --no-install -- lint-staged
+npx lint-staged
