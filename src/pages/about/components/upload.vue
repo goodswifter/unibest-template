@@ -10,7 +10,7 @@
 <template>
   <view class="p-4 text-center">
     <wd-button @click="run">选择图片并上传</wd-button>
-    <view v-if="loading" class="text-blue h-10">上传...</view>
+    <view v-if="loading" class="h-10 text-blue">上传...</view>
     <template v-else>
       <view class="m-2">上传后返回的接口数据：</view>
       <view class="m-2">{{ data }}</view>

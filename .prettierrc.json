@@ -1,4 +1,3 @@
-// @see https://prettier.io/docs/en/options
 {
   "singleQuote": true,
   "printWidth": 100,
@@ -8,13 +7,5 @@
   "trailingComma": "all",
   "endOfLine": "auto",
   "htmlWhitespaceSensitivity": "ignore",
-  "arrowParens": "avoid",
-  "overrides": [
-    {
-      "files": "*.json",
-      "options": {
-        "trailingComma": "none"
-      }
-    }
-  ]
+  "arrowParens": "avoid"
 }

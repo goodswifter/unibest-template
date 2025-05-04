@@ -15,6 +15,7 @@ export const useUserStore = defineStore(
     const clearUserInfo = () => {
       userInfo.value = { ...initState }
     }
+
     // 一般没有reset需求，不需要的可以删除
     const reset = () => {
       userInfo.value = { ...initState }
@@ -29,6 +30,5 @@ export const useUserStore = defineStore(
       reset,
     }
   },
-  { persist: true,
-  },
+  { persist: true },
 )

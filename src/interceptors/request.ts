@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import qs from 'qs'
 import { useUserStore } from '@/store'
 import { platform } from '@/utils/platform'
@@ -26,6 +25,7 @@ const httpInterceptor = {
         options.url += `?${queryStr}`
       }
     }
+
     // 非 http 开头需拼接地址
     if (!options.url.startsWith('http')) {
       // #ifdef H5

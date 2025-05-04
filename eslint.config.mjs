@@ -23,6 +23,7 @@ export default [
   // languageOptions：配置如何检查 js 代码
   {
     // 1.1 处理 与 JavaScript 相关的配置项
+    files: ['src/**/*.{js,ts,vue}'],
     ignores: eslintIgnore,
     languageOptions: {
       // 1.11 定义可用的全局变量
@@ -92,7 +93,7 @@ export default [
       'vue/padding-line-between-blocks': 'error', // 强制块之间的间距
       'vue/no-empty-component-block': 'error', // 禁止空的组件块报错
       // ✅ 强制 template > script > style
-      'vue/component-tags-order': ['error', { order: ['template', 'script', 'style'] }],
+      'vue/block-order': ['error', { order: ['template', 'script', 'style'] }],
       // ✅ 强制单行属性
       'vue/max-attributes-per-line': 'off',
       'vue/singleline-html-element-content-newline': 'off',

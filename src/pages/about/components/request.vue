@@ -23,7 +23,7 @@
     <!-- #endif -->
 
     <!-- http://localhost:9000/#/pages/index/request -->
-    <wd-button @click="run" class="my-6">发送请求</wd-button>
+    <wd-button class="my-6" @click="run">发送请求</wd-button>
     <view class="h-16">
       <view v-if="loading">loading...</view>
       <block v-else>
@@ -31,12 +31,12 @@
         <view class="text-green leading-8">{{ JSON.stringify(data) }}</view>
       </block>
     </view>
-    <wd-button type="error" @click="reset" class="my-6" :disabled="!data">重置数据</wd-button>
+    <wd-button type="error" class="my-6" :disabled="!data" @click="reset">重置数据</wd-button>
   </view>
 </template>
 
 <script lang="ts" setup>
-import { getFooAPI, postFooAPI, IFooItem } from '@/service/index/foo'
+import { getFooAPI, IFooItem } from '@/service/index/foo'
 import { findPetsByStatusQueryOptions } from '@/service/app'
 import { useQuery } from '@tanstack/vue-query'
 
