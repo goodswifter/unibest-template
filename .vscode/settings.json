@@ -16,10 +16,10 @@
   "less.validate": false,
   "scss.validate": false,
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -66,5 +66,5 @@
     "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, .gitattributes, .gitignore, .gitpod.yml, .npmrc, .browserslistrc, .node-version, .git*, .tazerc.json, package-lock.json",
     "eslint.config.mjs": ".eslintignore, .prettierignore, .stylelintignore, .commitlintrc.*, .prettierrc.*, stylelint.config.*, .lintstagedrc.mjs, cspell.json, .eslintrc-auto-import.json, .editorconfig, commitlint.config.cjs, uno.config.ts, eslint.ignore.mjs",
     "tsconfig.json": "tsconfig.*"
-  },
+  }
 }
