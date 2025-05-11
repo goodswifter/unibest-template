@@ -2,7 +2,7 @@ import { CustomRequestOptions } from '@/interceptors/request'
 
 export const http = <T>(options: CustomRequestOptions) => {
   // 1. 返回 Promise 对象
-  return new Promise<IResData<T>>((resolve, reject) => {
+  return new Promise<BaseRes<T>>((resolve, reject) => {
     uni.request({
       ...options,
       dataType: 'json',
@@ -12,7 +12,7 @@ export const http = <T>(options: CustomRequestOptions) => {
       // 响应成功
       success(res) {
         // 状态码 2xx，参考 axios 的设计
-        const data = res.data as IResData<T>
+        const data = res.data as BaseRes<T>
         if (res.statusCode >= 200 && res.statusCode < 300) {
           console.log('-----')
           if (data.succeed) {
@@ -54,11 +54,11 @@ export const http = <T>(options: CustomRequestOptions) => {
         })
 
         const data = {
-          code: -1,
+          code: '',
           succeed: false,
           message: err as any,
-          data: null as any,
-        } as IResData<T>
+          model: null as any,
+        } as BaseRes<T>
 
         reject(data)
       },

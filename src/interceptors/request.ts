@@ -7,7 +7,7 @@ export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
   /** 出错时是否隐藏错误提示 */
   hideErrorToast?: boolean
-} & IUniUploadFileOptions // 添加uni.uploadFile参数类型
+} & UniUploadFileReq // 添加uni.uploadFile参数类型
 
 // 拦截器配置
 const httpInterceptor = {
@@ -50,7 +50,7 @@ const httpInterceptor = {
     }
     // 3. 添加 token 请求头标识
     const userStore = useUserStore()
-    const { token } = userStore.userInfo as unknown as IUserInfo
+    const { token } = userStore.userInfo as unknown as UserModel
     if (token) {
       options.header.Authorization = `Bearer ${token}`
     }
