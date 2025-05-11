@@ -2,11 +2,11 @@
 import {
   type Preset,
   defineConfig,
-  presetUno,
   presetAttributify,
   presetIcons,
   transformerDirectives,
   transformerVariantGroup,
+  presetUno,
 } from 'unocss'
 
 import { presetApplet, presetRemRpx, transformerAttributify } from 'unocss-applet'
@@ -19,12 +19,12 @@ const isMp = process.env?.UNI_PLATFORM?.startsWith('mp') ?? false
 const presets: Preset[] = []
 if (isMp) {
   // 使用小程序预设
-  presets.push(presetApplet(), presetRemRpx({ baseFontSize: 2 }))
+  presets.push(presetApplet(), presetRemRpx({ baseFontSize: 4 }))
 } else {
   presets.push(
     // 非小程序用官方预设
     presetUno(),
-    presetRemRpx({ baseFontSize: 2 }),
+    presetRemRpx({ baseFontSize: 4 }),
     // 支持css class属性化
     presetAttributify(),
   )
@@ -51,15 +51,15 @@ export default defineConfig({
   ],
   theme: {
     fontSize: {
-      '2xs': '10px',
-      xs: '12px',
-      sm: '14px',
-      base: '16px',
-      lg: '18px',
-      xl: '20px',
-      '2xl': '22px',
-      '3xl': '24px',
-      '4xl': '36px',
+      '2xs': '10rpx',
+      xs: '12rpx',
+      sm: '14rpx',
+      base: '16rpx',
+      lg: '18rpx',
+      xl: '20rpx',
+      '2xl': '22rpx',
+      '3xl': '24rpx',
+      '4xl': '36rpx',
     },
   },
   /**
