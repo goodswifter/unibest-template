@@ -6,6 +6,7 @@ const initState = { nickname: '', avatar: '' }
 export const useUserStore = defineStore(
   'user',
   () => {
+    console.log('---useUserStore---')
     const userInfo = ref<IUserInfo>({ ...initState })
     const menusFunId = ref<string[]>([])
 

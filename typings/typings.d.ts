@@ -3,8 +3,10 @@
 declare global {
   type IResData<T> = {
     code: number
-    msg: string
     data: T
+    succeed: boolean
+    message: string
+    [key]: any
   }
 
   // uni.uploadFile文件上传参数
