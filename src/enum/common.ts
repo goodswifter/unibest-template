@@ -3,7 +3,10 @@
  * @value 10: 计价单位 20: 计量单位 30: 计价+计量
  */
 export enum UnitTypeEnum {
-  pricingUnit = 10,
-  measureUnit = 20,
-  measureAndPricingUnit = 30,
+  /** 计价单位 */
+  PRICING = 10,
+  /** 计量单位 */
+  MEASURE = 20,
+  /** 计量单位和计价单位 */
+  MEASURE_AND_PRICING = 30,
 }

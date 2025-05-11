@@ -51,7 +51,7 @@ export const getPluginsList = ({ mode, UNI_PLATFORM }: GetPluginsListProps): Plu
     } as any,
     UnoCSS(),
     AutoImport({
-      imports: ['vue', 'uni-app', { 'nutui-uniapp/composables': ['useToast'] }],
+      imports: ['vue', 'uni-app', 'pinia', { 'nutui-uniapp/composables': ['useToast'] }],
       dts: 'typings/auto-import.d.ts',
       dirs: ['src/hooks'], // 自动导入 hooks
       eslintrc: { enabled: true },

@@ -1,7 +1,6 @@
 import { http } from '@/utils/http'
-import apiPreFix from '@/enum/api-pre-fix'
 import type { IUserFunctionItem, PriceTypeModel } from '@/api/types'
-import { UnitTypeEnum } from '@/enum'
+import { UnitTypeEnum, ApiPreFixEnum } from '@/enum'
 
 export interface IFooItem {
   id: string
@@ -12,7 +11,9 @@ export interface IFooItem {
  * 获取字典项
  */
 export function orchctmsDictionaryIds(dictCodeList: string[]) {
-  return http.post<IFooItem>(apiPreFix.CTP_PORTAL + '/dict/queryValidValueList', { dictCodeList })
+  return http.post<IFooItem>(ApiPreFixEnum.CTP_PORTAL + '/dict/queryValidValueList', {
+    dictCodeList,
+  })
 }
 
 /**
@@ -20,7 +21,7 @@ export function orchctmsDictionaryIds(dictCodeList: string[]) {
  */
 export function getUserInfo() {
   return http.post<IUserFunctionItem>(
-    apiPreFix.CTP_USER + '/Platformumuserbaseinfo/getUserInfo',
+    ApiPreFixEnum.CTP_USER + '/Platformumuserbaseinfo/getUserInfo',
     {},
   )
 }
@@ -32,12 +33,12 @@ export function getUserInfo() {
  *   查询计价单位：pricingUnit传1
  *   查询全部：不需要传参数
  */
-export const getPriceTypes = (unitType: UnitTypeEnum = UnitTypeEnum.measureAndPricingUnit) => {
+export const getPriceTypes = (unitType: UnitTypeEnum = UnitTypeEnum.MEASURE_AND_PRICING) => {
   let data = {}
-  if (unitType == UnitTypeEnum.measureUnit) {
+  if (unitType == UnitTypeEnum.MEASURE) {
     data = { measureUnit: 1 }
-  } else if (unitType == UnitTypeEnum.pricingUnit) {
+  } else if (unitType == UnitTypeEnum.PRICING) {
     data = { pricingUnit: 1 }
   }
-  return http.post<PriceTypeModel[]>(apiPreFix.CTP_PORTAL + '/pricingType/query', data)
+  return http.post<PriceTypeModel[]>(ApiPreFixEnum.CTP_PORTAL + '/pricingType/query', data)
 }
