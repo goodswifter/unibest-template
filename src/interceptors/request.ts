@@ -29,7 +29,7 @@ const httpInterceptor = {
       // console.log(__VITE_APP_PROXY__)
       if (JSON.parse(__VITE_APP_PROXY__)) {
         // 自动拼接代理前缀
-        options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
+        // options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
       } else {
         options.url = BASE_URL + options.url
       }
