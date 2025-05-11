@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-ignore
-import { useQuery, useMutation } from '@tanstack/vue-query';
+import { queryOptions, useMutation } from '@tanstack/vue-query';
 import type { DefaultError } from '@tanstack/vue-query';
 import request from '@/utils/request';
 import { CustomRequestOptions } from '@/interceptors/request';
@@ -12,12 +12,12 @@ import * as API from './types';
 export function getInventoryQueryOptions(options: {
   options?: CustomRequestOptions;
 }) {
-  return {
-    queryKey: ['getInventory', options],
-    queryFn: async () => {
-      return apis.getInventory(options);
+  return queryOptions({
+    queryFn: async ({ queryKey }) => {
+      return apis.getInventory(queryKey[1] as typeof options);
     },
-  };
+    queryKey: ['getInventory', options],
+  });
 }
 
 /** Place an order for a pet POST /store/order */
@@ -46,12 +46,12 @@ export function getOrderByIdQueryOptions(options: {
   params: API.getOrderByIdParams;
   options?: CustomRequestOptions;
 }) {
-  return {
-    queryKey: ['getOrderById', options],
-    queryFn: async () => {
-      return apis.getOrderById(options);
+  return queryOptions({
+    queryFn: async ({ queryKey }) => {
+      return apis.getOrderById(queryKey[1] as typeof options);
     },
-  };
+    queryKey: ['getOrderById', options],
+  });
 }
 
 /** Delete purchase order by ID For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors DELETE /store/order/${param0} */

@@ -1,19 +1,23 @@
 <route lang="json5">
 {
   style: {
-    navigationBarTitleText: '关于2',
+    navigationBarTitleText: '关于',
+    componentPlaceholder: {
+      'wl-text': 'view',
+    },
   },
 }
 </route>
 
 <template>
   <view
-    class="overflow-hidden bg-white px-4 pt-2"
+    class="overflow-hidden bg-white px-16 pt-8"
     :style="{ marginTop: safeAreaInsets?.top + 'px' }"
   >
-    <view class="mt-8 text-center text-3xl">
+    <wl-text />
+    <view class="mt-32 text-center text-3xl">
       鸽友们好，我是
-      <text class="text-red-500">菲鸽</text>
+      <text class="text-red-500">菲鸽1</text>
     </view>
     <RequestComp />
     <UploadComp />
@@ -21,11 +25,13 @@
 </template>
 
 <script lang="ts" setup>
-import RequestComp from './components/request.vue'
-import UploadComp from './components/upload.vue'
+import RequestComp from './cpns/request.vue'
+import UploadComp from './cpns/upload.vue'
+import WlText from '../pages-common/cpns/wl-text.vue'
 
 // 获取屏幕边界到安全区域距离
 const { safeAreaInsets } = uni.getSystemInfoSync()
+console.log('预加载成功')
 </script>
 
 <style lang="scss" scoped>

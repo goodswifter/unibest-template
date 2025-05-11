@@ -15,6 +15,7 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
+  "scss.lint.unknownAtRules": "ignore",
   "[shellscript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -35,36 +36,14 @@
     "pages.json": "jsonc", // pages.json 可以写注释
     "manifest.json": "jsonc" // manifest.json 可以写注释
   },
-  "cSpell.words": [
-    "Aplipay",
-    "climblee",
-    "commitlint",
-    "dcloudio",
-    "iconfont",
-    "ntvs",
-    "qrcode",
-    "refresherrefresh",
-    "scrolltolower",
-    "tabbar",
-    "Toutiao",
-    "unibest",
-    "uvui",
-    "Wechat",
-    "WechatMiniprogram",
-    "Weixin"
-  ],
   "typescript.tsdk": "node_modules\\typescript\\lib",
-
-  // ---------------------- 文件嵌套 配置 ----------------------
   "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": false, // 控制嵌套文件是否默认展开
+  "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "*.ts": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx, $(capture).d.ts",
-    "*.tsx": "$(capture).test.ts, $(capture).test.tsx, $(capture).spec.ts, $(capture).spec.tsx,$(capture).d.ts",
+    "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, LICENSE, .gitattributes, .gitignore, .gitpod.yml, CNAME, .npmrc, .browserslistrc",
+    "eslint.config.mjs": ".eslintignore, .prettierignore, .stylelintignore, commitlint.*, .prettierrc.*, .stylelintrc.*, .eslintrc-auto-import.json, .editorconfig, .commitlint.cjs, eslint.ignore.mjs, .eslintcache",
     "*.env": "$(capture).env.*",
-    "README.md": "README*,CHANGELOG*,LICENSE,CNAME",
-    "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, .gitattributes, .gitignore, .gitpod.yml, .npmrc, .browserslistrc, .node-version, .git*, .tazerc.json, package-lock.json",
-    "eslint.config.mjs": ".eslintignore, .prettierignore, .stylelintignore, .commitlintrc.*, .prettierrc.*, stylelint.config.*, .lintstagedrc.mjs, cspell.json, .eslintrc-auto-import.json, .editorconfig, commitlint.config.cjs, uno.config.ts, eslint.ignore.mjs",
-    "tsconfig.json": "tsconfig.*"
+    "README.md": "README*, CHANGELOG*, LICENSE, CNAME",
+    "vite.config.ts": "*.config.ts, commitlint.config.ts"
   }
 }

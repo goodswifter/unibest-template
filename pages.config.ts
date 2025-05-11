@@ -11,7 +11,8 @@ export default defineUniPages({
   easycom: {
     autoscan: true,
     custom: {
-      '^wd-(.*)': 'wot-design-uni/components/wd-$1/wd-$1.vue',
+      '^nut-(.*)?-(.*)': 'nutui-uniapp/components/$1$2/$1$2.vue',
+      '^nut-(.*)': 'nutui-uniapp/components/$1/$1.vue',
       '^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)':
         'z-paging/components/z-paging$1/z-paging$1.vue',
     },
@@ -29,13 +30,13 @@ export default defineUniPages({
       {
         iconPath: 'static/tabbar/home.png',
         selectedIconPath: 'static/tabbar/homeHL.png',
-        pagePath: 'pages/index/index',
+        pagePath: 'pages/home/index',
         text: '首页',
       },
       {
         iconPath: 'static/tabbar/example.png',
         selectedIconPath: 'static/tabbar/exampleHL.png',
-        pagePath: 'pages/about/about',
+        pagePath: 'pages/about/index',
         text: '关于',
       },
     ],

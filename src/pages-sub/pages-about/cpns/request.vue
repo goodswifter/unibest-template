@@ -8,30 +8,30 @@
 </route>
 
 <template>
-  <view class="p-6 text-center">
-    <view class="my-2">使用的是 laf 云后台</view>
+  <view class="p-24 text-center">
+    <view class="my-8">使用的是 laf 云后台</view>
     <view class="text-green-400">我的推荐码，可以获得佣金</view>
 
     <!-- #ifdef H5 -->
-    <view class="my-2">
-      <a class="my-2" :href="recommendUrl" target="_blank">{{ recommendUrl }}</a>
+    <view class="my-8">
+      <a class="my-8" :href="recommendUrl" target="_blank">{{ recommendUrl }}</a>
     </view>
     <!-- #endif -->
 
     <!-- #ifndef H5 -->
-    <view class="my-2 text-left text-sm">{{ recommendUrl }}</view>
+    <view class="my-8 text-left text-sm">{{ recommendUrl }}</view>
     <!-- #endif -->
 
     <!-- http://localhost:9000/#/pages/index/request -->
-    <wd-button class="my-6" @click="run">发送请求</wd-button>
-    <view class="h-16">
+    <nut-button class="my-24" @click="run">发送请求</nut-button>
+    <view class="h-64">
       <view v-if="loading">loading...</view>
       <block v-else>
         <view class="text-xl">请求数据如下</view>
-        <view class="text-green leading-8">{{ JSON.stringify(data) }}</view>
+        <view class="text-green leading-32">{{ JSON.stringify(data) }}</view>
       </block>
     </view>
-    <wd-button type="error" class="my-6" :disabled="!data" @click="reset">重置数据</wd-button>
+    <nut-button class="my-24" :disabled="!data" @click="reset">重置数据</nut-button>
   </view>
 </template>
 

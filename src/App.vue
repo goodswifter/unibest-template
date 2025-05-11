@@ -15,45 +15,47 @@ onHide(() => {
 
 <style lang="scss">
 /* stylelint-disable selector-type-no-unknown */
-button::after {
-  border: none;
-}
+@import 'nutui-uniapp/styles/index';
 
-swiper,
-scroll-view {
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-}
+// button::after {
+//   border: none;
+// }
 
-image {
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
-}
+// swiper,
+// scroll-view {
+//   flex: 1;
+//   height: 100%;
+//   overflow: hidden;
+// }
 
-// 单行省略，优先使用 unocss: text-ellipsis
-.ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+// image {
+//   width: 100%;
+//   height: 100%;
+//   vertical-align: middle;
+// }
 
-// 两行省略
-.ellipsis-2 {
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+// // 单行省略，优先使用 unocss: text-ellipsis
+// .ellipsis {
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
 
-// 三行省略
-.ellipsis-3 {
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
+// // 两行省略
+// .ellipsis-2 {
+//   display: -webkit-box;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   -webkit-line-clamp: 2;
+//   -webkit-box-orient: vertical;
+// }
+
+// // 三行省略
+// .ellipsis-3 {
+//   display: -webkit-box;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   -webkit-line-clamp: 3;
+//   -webkit-box-orient: vertical;
+// }
 </style>

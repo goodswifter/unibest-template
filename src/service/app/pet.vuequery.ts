@@ -1,6 +1,7 @@
 /* eslint-disable */
 // @ts-ignore
-import { useQuery, useMutation, queryOptions } from '@tanstack/vue-query';
+import { queryOptions, useMutation } from '@tanstack/vue-query';
+import type { DefaultError } from '@tanstack/vue-query';
 import request from '@/utils/request';
 import { CustomRequestOptions } from '@/interceptors/request';
 
@@ -10,7 +11,7 @@ import * as API from './types';
 /** Update an existing pet PUT /pet */
 export function useUpdatePetMutation(options?: {
   onSuccess?: (value?: unknown) => void;
-  onError?: (error?: unknown) => void;
+  onError?: (error?: DefaultError) => void;
 }) {
   const { onSuccess, onError } = options || {};
 
@@ -30,7 +31,7 @@ export function useUpdatePetMutation(options?: {
 /** Add a new pet to the store POST /pet */
 export function useAddPetMutation(options?: {
   onSuccess?: (value?: unknown) => void;
-  onError?: (error?: unknown) => void;
+  onError?: (error?: DefaultError) => void;
 }) {
   const { onSuccess, onError } = options || {};
 
@@ -53,18 +54,18 @@ export function getPetByIdQueryOptions(options: {
   params: API.getPetByIdParams;
   options?: CustomRequestOptions;
 }) {
-  return {
-    queryKey: ['getPetById', options],
-    queryFn: async () => {
-      return apis.getPetById(options);
+  return queryOptions({
+    queryFn: async ({ queryKey }) => {
+      return apis.getPetById(queryKey[1] as typeof options);
     },
-  };
+    queryKey: ['getPetById', options],
+  });
 }
 
 /** Updates a pet in the store with form data POST /pet/${param0} */
 export function useUpdatePetWithFormMutation(options?: {
   onSuccess?: (value?: unknown) => void;
-  onError?: (error?: unknown) => void;
+  onError?: (error?: DefaultError) => void;
 }) {
   const { onSuccess, onError } = options || {};
 
@@ -84,7 +85,7 @@ export function useUpdatePetWithFormMutation(options?: {
 /** Deletes a pet DELETE /pet/${param0} */
 export function useDeletePetMutation(options?: {
   onSuccess?: (value?: unknown) => void;
-  onError?: (error?: unknown) => void;
+  onError?: (error?: DefaultError) => void;
 }) {
   const { onSuccess, onError } = options || {};
 
@@ -104,7 +105,7 @@ export function useDeletePetMutation(options?: {
 /** uploads an image POST /pet/${param0}/uploadImage */
 export function useUploadFileMutation(options?: {
   onSuccess?: (value?: API.ApiResponse) => void;
-  onError?: (error?: unknown) => void;
+  onError?: (error?: DefaultError) => void;
 }) {
   const { onSuccess, onError } = options || {};
 
@@ -127,12 +128,12 @@ export function findPetsByStatusQueryOptions(options: {
   params: API.findPetsByStatusParams;
   options?: CustomRequestOptions;
 }) {
-  return {
-    queryKey: ['findPetsByStatus', options],
-    queryFn: async () => {
-      return apis.findPetsByStatus(options);
+  return queryOptions({
+    queryFn: async ({ queryKey }) => {
+      return apis.findPetsByStatus(queryKey[1] as typeof options);
     },
-  };
+    queryKey: ['findPetsByStatus', options],
+  });
 }
 
 /** Finds Pets by tags Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing. GET /pet/findByTags */
@@ -141,10 +142,10 @@ export function findPetsByTagsQueryOptions(options: {
   params: API.findPetsByTagsParams;
   options?: CustomRequestOptions;
 }) {
-  return {
-    queryKey: ['findPetsByTags', options],
-    queryFn: async () => {
-      return apis.findPetsByTags(options);
+  return queryOptions({
+    queryFn: async ({ queryKey }) => {
+      return apis.findPetsByTags(queryKey[1] as typeof options);
     },
-  };
+    queryKey: ['findPetsByTags', options],
+  });
 }

@@ -7,5 +7,13 @@
   "trailingComma": "all",
   "endOfLine": "auto",
   "htmlWhitespaceSensitivity": "ignore",
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ]
 }

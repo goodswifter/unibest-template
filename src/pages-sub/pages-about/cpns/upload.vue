@@ -8,13 +8,13 @@
 </route>
 
 <template>
-  <view class="p-4 text-center">
-    <wd-button @click="run">选择图片并上传</wd-button>
-    <view v-if="loading" class="h-10 text-blue">上传...</view>
+  <view class="p-16 text-center">
+    <nut-button @click="run">选择图片并上传</nut-button>
+    <view v-if="loading" class="h-40 text-blue">上传...</view>
     <template v-else>
-      <view class="m-2">上传后返回的接口数据：</view>
-      <view class="m-2">{{ data }}</view>
-      <view class="h-80 w-full">
+      <view class="m-8">上传后返回的接口数据：</view>
+      <view class="m-8">{{ data }}</view>
+      <view class="h-320 w-full">
         <image v-if="data" :src="data || data" mode="scaleToFill" />
       </view>
     </template>

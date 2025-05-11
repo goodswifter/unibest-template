@@ -2,7 +2,6 @@
 <route lang="json5" type="home">
 {
   style: {
-    navigationStyle: 'custom',
     navigationBarTitleText: '首页1',
   },
 }
@@ -10,30 +9,37 @@
 
 <template>
   <view
-    class="overflow-hidden bg-white px-4 pt-2"
+    class="overflow-hidden bg-white px-16 pt-8"
     :style="{ marginTop: safeAreaInsets?.top + 'px' }"
   >
-    <view class="mt-12">
-      <image src="/static/logo.svg" alt="" class="mx-auto block h-28 w-28" />
+    <view class="mt-48">
+      <image src="/static/logo.svg" alt="" class="mx-auto block h-112 w-112" />
     </view>
-    <view class="main-title-color mt-4 text-center text-4xl">unibest</view>
-    <view class="mb-8 mt-2 text-center text-2xl">最好用的 uniapp 开发模板</view>
+    <view class="main-title-color text-16xl mt-16 text-center">unibest</view>
+    <view class="mb-32 mt-8 text-center text-8xl">最好用的 uniapp 开发模板</view>
 
-    <view class="m-auto mb-2 max-w-100 text-justify indent text-4">{{ description }}</view>
-    <view class="mt-8 text-center">
+    <view class="m-auto mb-8 max-w-400 text-justify indent text-16">{{ description }}</view>
+    <view class="mt-32 text-center">
       当前平台是：
       <text class="text-green-500">{{ PLATFORM.platform }}</text>
     </view>
-    <view class="mt-4 text-center">
+    <view class="mt-16 text-center">
       模板分支是：
       <text class="text-green-500">base</text>
+    </view>
+    <view class="my-16 flex justify-center">
+      <nut-button @click="onToast">toast</nut-button>
+    </view>
+    <view class="my-16 flex justify-center">
+      <nut-button @click="handleClick">点击跳转详情</nut-button>
     </view>
   </view>
 </template>
 
 <script lang="ts" setup>
-import { TestEnum } from '@/typings'
+import { TestEnum } from '@/enum/typings'
 import PLATFORM from '@/utils/platform'
+import { ref } from 'vue'
 
 defineOptions({
   name: 'Home',
@@ -50,9 +56,21 @@ onLoad(() => {
   console.log(author)
   console.log(TestEnum.A)
 })
+
+// toast
+const toast = useToast()
+const onToast = () => {
+  toast.success('toast')
+}
+
+const handleClick = () => {
+  uni.navigateTo({
+    url: '/pages-sub/pages-home/detail/index',
+  })
+}
 </script>
 
-<style>
+<style lang="scss" scoped>
 .main-title-color {
   color: #d14328;
 }

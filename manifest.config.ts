@@ -4,7 +4,7 @@ import path from 'node:path'
 import { loadEnv } from 'vite'
 
 // 获取环境变量的范例
-const env = loadEnv(process.env.NODE_ENV!, path.resolve(process.cwd(), 'env'))
+const env = loadEnv(process.env.NODE_ENV!, path.resolve(process.cwd()))
 const {
   VITE_APP_TITLE,
   VITE_UNI_APPID,
@@ -19,7 +19,7 @@ export default defineManifestConfig({
   description: '',
   versionName: '1.0.0',
   versionCode: '100',
-  transformPx: undefined,
+  transformPx: false,
   locale: VITE_FALLBACK_LOCALE, // 'zh-Hans'
   h5: {
     router: {
@@ -38,7 +38,7 @@ export default defineManifestConfig({
       alwaysShowBeforeRender: true,
       waiting: true,
       autoclose: true,
-      delay: undefined,
+      delay: 0,
     },
     /* 模块配置 */
     modules: {},

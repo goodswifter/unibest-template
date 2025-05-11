@@ -1,9 +1,4 @@
-packages:
-  - 'src'
-  - 'vite-plugins'
-
 onlyBuiltDependencies:
-  - '@parcel/watcher'
   - core-js
   - es5-ext
   - esbuild

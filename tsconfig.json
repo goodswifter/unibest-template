@@ -15,12 +15,12 @@
     },
     "outDir": "dist",
     "lib": ["esnext", "dom"],
-    "target": "esnext",
     "types": [
       "@dcloudio/types",
       "@uni-helper/uni-types",
       "@types/wechat-miniprogram",
-      "./src/typings.d.ts"
+      "nutui-uniapp/global.d.ts",
+      "z-paging/types"
     ]
   },
   "vueCompilerOptions": {
@@ -34,6 +34,7 @@
     "src/**/*.tsx",
     "src/**/*.jsx",
     "src/**/*.vue",
-    "src/**/*.json"
+    "src/**/*.json",
+    "typings/*.d.ts"
   ]
 }

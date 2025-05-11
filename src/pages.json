@@ -9,7 +9,8 @@
   "easycom": {
     "autoscan": true,
     "custom": {
-      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue",
+      "^nut-(.*)?-(.*)": "nutui-uniapp/components/$1$2/$1$2.vue",
+      "^nut-(.*)": "nutui-uniapp/components/$1/$1.vue",
       "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
     }
   },
@@ -26,34 +27,99 @@
       {
         "iconPath": "static/tabbar/home.png",
         "selectedIconPath": "static/tabbar/homeHL.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/index",
         "text": "首页"
       },
       {
         "iconPath": "static/tabbar/example.png",
         "selectedIconPath": "static/tabbar/exampleHL.png",
-        "pagePath": "pages/about/about",
+        "pagePath": "pages/about/index",
         "text": "关于"
       }
     ]
   },
-  "__esModule": true,
   "pages": [
     {
-      "path": "pages/index/index",
+      "path": "pages/home/index",
       "type": "home",
       "style": {
         "navigationStyle": "custom",
-        "navigationBarTitleText": "首页1"
+        "navigationBarTitleText": "首页",
+        "componentPlaceholder": {
+          "sub-home": "view"
+        }
       }
     },
     {
-      "path": "pages/about/about",
+      "path": "pages/about/index",
       "type": "page",
       "style": {
-        "navigationBarTitleText": "关于2"
+        "navigationBarTitleText": "关于",
+        "componentPlaceholder": {
+          "sub-about": "view"
+        }
       }
     }
   ],
-  "subPackages": []
+  "subPackages": [
+    {
+      "root": "pages-sub",
+      "pages": [
+        {
+          "path": "pages-about/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "关于",
+            "componentPlaceholder": {
+              "wl-text": "view"
+            }
+          }
+        },
+        {
+          "path": "pages-common/index",
+          "type": "page",
+          "layout": "default",
+          "hidden": true,
+          "style": {
+            "navigationBarTitleText": "公共包"
+          }
+        },
+        {
+          "path": "pages-home/index",
+          "type": "home",
+          "style": {
+            "navigationBarTitleText": "首页1"
+          }
+        },
+        {
+          "path": "pages-about/cpns/request",
+          "type": "page",
+          "layout": "demo",
+          "style": {
+            "navigationBarTitleText": "请求"
+          }
+        },
+        {
+          "path": "pages-about/cpns/upload",
+          "type": "page",
+          "layout": "default",
+          "style": {
+            "navigationBarTitleText": "上传-状态一体化"
+          }
+        },
+        {
+          "path": "pages-common/cpns/wl-text",
+          "type": "page"
+        },
+        {
+          "path": "pages-home/detail/index",
+          "type": "page",
+          "layout": "default",
+          "style": {
+            "navigationBarTitleText": "详情"
+          }
+        }
+      ]
+    }
+  ]
 }
