@@ -40,6 +40,9 @@ const onToast = () => {
 const handleClick = () => {
   uni.navigateTo({
     url: '/pages-demo/pages/demo/index',
+    fail: res => {
+      console.log(res)
+    },
   })
 }
 </script>
