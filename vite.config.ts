@@ -31,8 +31,6 @@ export default ({ command, mode }) => {
   console.log('环境变量 env -> ', env)
 
   return defineConfig({
-    envDir: './env', // 自定义env目录
-
     plugins: getPluginsList({ mode, UNI_PLATFORM: UNI_PLATFORM || '' }),
     define: {
       __UNI_PLATFORM__: JSON.stringify(UNI_PLATFORM),

@@ -51,15 +51,15 @@ export default defineConfig({
   ],
   theme: {
     fontSize: {
-      '2xs': '10px',
-      xs: '12px',
-      sm: '14px',
-      base: '16px',
-      lg: '18px',
-      xl: '20px',
-      '2xl': '22px',
-      '3xl': '24px',
-      '4xl': '36px',
+      '2xs': '20rpx',
+      xs: '24rpx',
+      sm: '28rpx',
+      base: '32rpx',
+      lg: '36rpx',
+      xl: '40rpx',
+      '2xl': '44rpx',
+      '3xl': '48rpx',
+      '4xl': '52rpx',
     },
   },
   /**
@@ -192,7 +192,7 @@ export default defineConfig({
 /**
  * 最终这一套组合下来会得到：
  * mp 里面：mt-4 => margin-top: 32rpx  == 16px
- * h5 里面：mt-4 => margin-top: 1rem == 16px
+ * h5 里面：mt-16 => margin-top: 16rem == 16px
  *
  * 如果是传统方式写样式，则推荐设计稿设置为 750，这样设计稿1px，代码写1rpx。
  * rpx是响应式的，可以让不同设备的屏幕显示效果保持一致。

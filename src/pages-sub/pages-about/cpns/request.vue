@@ -27,7 +27,7 @@
     <view class="h-64">
       <view v-if="loading">loading...</view>
       <block v-else>
-        <view class="text-xl">请求数据如下</view>
+        <view class="mt-10 text-xl">请求数据如下</view>
         <view class="text-green leading-32">{{ JSON.stringify(data) }}</view>
       </block>
     </view>

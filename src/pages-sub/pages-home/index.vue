@@ -16,9 +16,9 @@
       <image src="/static/logo.svg" alt="" class="mx-auto block h-112 w-112" />
     </view>
     <view class="main-title-color mt-16 text-center text-8xl">unibest</view>
-    <view class="mb-32 mt-16 text-center text-2xl">最好用的 uniapp 开发模板</view>
+    <view class="mb-32 mt-16 text-center text-6xl">最好用的 uniapp 开发模板</view>
 
-    <view class="m-auto mb-16 max-w-400 text-justify indent">{{ description }}</view>
+    <view class="m-auto mb-16 max-w-400 text-justify indent text-6xl">{{ description }}</view>
     <view class="mt-32 text-center">
       当前平台是：
       <text class="text-green-500">{{ PLATFORM.platform }}</text>
