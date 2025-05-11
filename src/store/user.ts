@@ -7,6 +7,7 @@ export const useUserStore = defineStore(
   'user',
   () => {
     const userInfo = ref<IUserInfo>({ ...initState })
+    const menusFunId = ref<string[]>([])
 
     const setUserInfo = (val: IUserInfo) => {
       userInfo.value = val
@@ -28,6 +29,7 @@ export const useUserStore = defineStore(
       clearUserInfo,
       isLogined,
       reset,
+      menusFunId,
     }
   },
   {

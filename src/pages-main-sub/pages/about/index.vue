@@ -9,7 +9,7 @@
       <nut-button @click="onToast">toast</nut-button>
     </view>
     <view class="my-16 flex justify-center">
-      <nut-button @click="handleClick">点击跳转详情</nut-button>
+      <nut-button @click="handleClick">开发示例</nut-button>
     </view>
   </view>
 </template>
@@ -39,7 +39,7 @@ const onToast = () => {
 
 const handleClick = () => {
   uni.navigateTo({
-    url: '/pages-sub/pages-home/detail/index',
+    url: '/pages-demo/pages/demo/index',
   })
 }
 </script>
