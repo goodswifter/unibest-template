@@ -166,13 +166,24 @@
         },
         {
           "path": "pages/home/index",
-          "type": "page"
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "demo"
+          }
         }
       ]
     },
     {
-      "root": "pages-components",
-      "pages": []
+      "root": "pages-shared",
+      "pages": [
+        {
+          "path": "pages/index/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "站位分包"
+          }
+        }
+      ]
     },
     {
       "root": "pages-demo",

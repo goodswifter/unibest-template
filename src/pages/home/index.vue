@@ -13,6 +13,7 @@
 
 <template>
   <sub-home />
+  <view>首页</view>
 </template>
 
 <script lang="ts" setup>
