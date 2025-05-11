@@ -1,9 +1,9 @@
 <!-- 使用 type="home" 属性设置首页，其他页面不需要设置，默认为page；推荐使用json5，更强大，且允许注释 -->
-<route lang="json5" type="home">
+<route lang="json5">
 {
   style: {
     navigationStyle: 'custom',
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: '商品',
     componentPlaceholder: {
       'sub-home': 'view',
     },
@@ -16,11 +16,9 @@
 </template>
 
 <script lang="ts" setup>
-import SubHome from '@/pages-main-sub/about/index.vue'
+import SubHome from '@/pages-sub/pages-home/index.vue'
 
 defineOptions({
-  name: 'Home',
+  name: '',
 })
-
-console.log('首页加载完毕')
 </script>

@@ -33,8 +33,26 @@
       {
         "iconPath": "static/tabbar/example.png",
         "selectedIconPath": "static/tabbar/exampleHL.png",
-        "pagePath": "pages/about/index",
-        "text": "关于"
+        "pagePath": "pages/product/index",
+        "text": "商品"
+      },
+      {
+        "iconPath": "static/tabbar/example.png",
+        "selectedIconPath": "static/tabbar/exampleHL.png",
+        "pagePath": "pages/info/index",
+        "text": "资讯"
+      },
+      {
+        "iconPath": "static/tabbar/example.png",
+        "selectedIconPath": "static/tabbar/exampleHL.png",
+        "pagePath": "pages/shop-cart/index",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "static/tabbar/example.png",
+        "selectedIconPath": "static/tabbar/exampleHL.png",
+        "pagePath": "pages/mine/index",
+        "text": "我的"
       }
     ]
   },
@@ -51,12 +69,43 @@
       }
     },
     {
-      "path": "pages/about/index",
+      "path": "pages/info/index",
       "type": "page",
       "style": {
-        "navigationBarTitleText": "关于",
+        "navigationBarTitleText": "资讯中心",
         "componentPlaceholder": {
-          "sub-about": "view"
+          "sub-home": "view"
+        }
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "componentPlaceholder": {
+          "sub-home": "view"
+        }
+      }
+    },
+    {
+      "path": "pages/product/index",
+      "type": "page",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "商品",
+        "componentPlaceholder": {
+          "sub-home": "view"
+        }
+      }
+    },
+    {
+      "path": "pages/shop-cart/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "购物车",
+        "componentPlaceholder": {
+          "sub-home": "view"
         }
       }
     }
@@ -73,15 +122,6 @@
             "componentPlaceholder": {
               "wl-text": "view"
             }
-          }
-        },
-        {
-          "path": "pages-common/index",
-          "type": "page",
-          "layout": "default",
-          "hidden": true,
-          "style": {
-            "navigationBarTitleText": "公共包"
           }
         },
         {
@@ -108,16 +148,34 @@
           }
         },
         {
-          "path": "pages-common/cpns/wl-text",
-          "type": "page"
-        },
-        {
           "path": "pages-home/detail/index",
           "type": "page",
           "layout": "default",
           "style": {
             "navigationBarTitleText": "详情"
           }
+        }
+      ]
+    },
+    {
+      "root": "pages-main-sub",
+      "pages": [
+        {
+          "path": "pages/about/index",
+          "type": "page"
+        },
+        {
+          "path": "pages/home/index",
+          "type": "page"
+        }
+      ]
+    },
+    {
+      "root": "pages-components",
+      "pages": [
+        {
+          "path": "demo/index",
+          "type": "page"
         }
       ]
     }
