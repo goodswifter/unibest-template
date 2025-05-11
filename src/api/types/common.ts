@@ -19,18 +19,19 @@ export interface IUserFunctionItem {
   sortno: number
   styleName: string
   url: string
-  createBy: null
-  createDate: null
-  modifyBy: null
-  modifyDate: null
-  ex: null
+  createBy: any
+  createDate: any
+  modifyBy: any
+  modifyDate: any
+  ex: any
   item1: string
-  item2: null
-  item3: null
-  item4: null
-  permissionId: null
+  item2: any
+  item3: any
+  item4: any
+  permissionId: any
   exFlag: boolean
   sysType: string
   btnOperType: string
-  userBaseId: null
+  userBaseId: any
+  [pro: string]: any
 }

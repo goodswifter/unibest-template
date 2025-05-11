@@ -1,5 +1,5 @@
 import { http } from '@/utils/http'
-import apiPreFix from '@/enum/apiPreFix'
+import apiPreFix from '@/enum/api-pre-fix'
 
 export interface IFooItem {
   id: string

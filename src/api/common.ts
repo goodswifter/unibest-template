@@ -1,5 +1,5 @@
 import { http } from '@/utils/http'
-import apiPreFix from '@/enum/apiPreFix'
+import apiPreFix from '@/enum/api-pre-fix'
 import type { IUserFunctionItem } from '@/api/types/common'
 
 export interface IFooItem {

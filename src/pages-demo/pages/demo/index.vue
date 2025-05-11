@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { MenusFunId } from '@/enum/menuFuncId'
+import { MenusFunId } from '@/enum/menu-funcId'
 import { getUserInfo } from '@/api/common'
 
 const checkMenuAuth = () => {
