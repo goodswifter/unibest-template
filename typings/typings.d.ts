@@ -31,6 +31,17 @@ declare global {
     openid?: string
     token?: string
   }
+
+  export interface OptionModel {
+    /** 标签 */
+    label: string
+    /** 值 */
+    value: number | string
+    /** 附件类型 */
+    attachmentType?: number
+    /** 图片 */
+    pic?: string
+  }
 }
 
 export {} // 防止模块污染
