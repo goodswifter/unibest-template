@@ -178,6 +178,18 @@
           "type": "page"
         }
       ]
+    },
+    {
+      "root": "pages-demo",
+      "pages": [
+        {
+          "path": "pages/demo/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "demo"
+          }
+        }
+      ]
     }
   ]
 }
