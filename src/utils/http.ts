@@ -1,10 +1,28 @@
 import { CustomRequestOptions } from '@/interceptors/request'
 
+// HTTP 配置对象
+export const httpConfig = {
+  baseURL: '/gateway',
+}
+
+const GATEWAY = '/gateway'
+
+// 处理 URL
+const handleUrl = (url: string) => {
+  if (httpConfig.baseURL && !url.startsWith('http')) {
+    const apiUrl = url.startsWith('/') ? url : `/${url}`
+    return `${GATEWAY}${apiUrl}`
+  }
+
+  return url
+}
+
 export const http = <T>(options: CustomRequestOptions) => {
   // 1. 返回 Promise 对象
   return new Promise<BaseRes<T>>((resolve, reject) => {
     uni.request({
       ...options,
+      url: handleUrl(options.url),
       dataType: 'json',
       // #ifndef MP-WEIXIN
       responseType: 'json',

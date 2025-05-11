@@ -22,7 +22,7 @@ export default ({ command, mode }) => {
   const env = loadEnv(mode, path.resolve(process.cwd()))
   const {
     VITE_APP_PORT,
-    VITE_SERVER_BASEURL,
+    VITE_BASE_URL,
     VITE_DELETE_CONSOLE,
     VITE_SHOW_SOURCEMAP,
     VITE_APP_PROXY,
@@ -58,7 +58,7 @@ export default ({ command, mode }) => {
       proxy: JSON.parse(VITE_APP_PROXY)
         ? {
             [VITE_APP_PROXY_PREFIX]: {
-              target: VITE_SERVER_BASEURL,
+              target: VITE_BASE_URL,
               changeOrigin: true,
               rewrite: path => path.replace(new RegExp(`^${VITE_APP_PROXY_PREFIX}`), ''),
             },
