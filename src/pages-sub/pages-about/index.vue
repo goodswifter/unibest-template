@@ -12,7 +12,7 @@
 <template>
   <view
     class="overflow-hidden bg-white px-16 pt-8"
-    :style="{ marginTop: safeAreaInsets?.top + 'px' }"
+    :style="{ marginTop: safeAreaInsets?.top + 'rpx' }"
   >
     <wl-text />
     <view class="mt-32 text-center text-3xl">
