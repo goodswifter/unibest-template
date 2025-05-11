@@ -128,8 +128,8 @@ export const needLoginPages: string[] = getAllPages('needLogin').map(page => pag
 export const getEnvBaseUrl = () => {
   console.log('getEnvBaseUrl 函数被调用')
   // 请求基准地址
-  let baseUrl = import.meta.env.VITE_SERVER_BASEURL
-  console.log('环境变量 VITE_SERVER_BASEURL:', import.meta.env.VITE_SERVER_BASEURL)
+  let baseUrl = import.meta.env.VITE_BASE_URL
+  console.log('环境变量 VITE_BASE_URL:', import.meta.env.VITE_BASE_URL)
   console.log('当前 baseUrl:', baseUrl)
 
   // 微信小程序端环境区分
@@ -140,13 +140,13 @@ export const getEnvBaseUrl = () => {
 
     switch (envVersion) {
       case 'develop':
-        baseUrl = import.meta.env.VITE_SERVER_BASEURL__WEIXIN_DEVELOP || baseUrl
+        baseUrl = import.meta.env.VITE_BASE_URL__WEIXIN_DEVELOP || baseUrl
         break
       case 'trial':
-        baseUrl = import.meta.env.VITE_SERVER_BASEURL__WEIXIN_TRIAL || baseUrl
+        baseUrl = import.meta.env.VITE_BASE_URL__WEIXIN_TRIAL || baseUrl
         break
       case 'release':
-        baseUrl = import.meta.env.VITE_SERVER_BASEURL__WEIXIN_RELEASE || baseUrl
+        baseUrl = import.meta.env.VITE_BASE_URL__WEIXIN_RELEASE || baseUrl
         break
     }
   }

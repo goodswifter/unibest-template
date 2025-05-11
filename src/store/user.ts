@@ -6,10 +6,10 @@ const initState = { nickname: '', avatar: '' }
 export const useUserStore = defineStore(
   'user',
   () => {
-    const userInfo = ref<IUserInfo>({ ...initState })
+    const userInfo = ref<UserModel>({ ...initState })
     const menusFunId = ref<string[]>([])
 
-    const setUserInfo = (val: IUserInfo) => {
+    const setUserInfo = (val: UserModel) => {
       userInfo.value = val
     }
 
@@ -32,7 +32,5 @@ export const useUserStore = defineStore(
       menusFunId,
     }
   },
-  {
-    persist: true,
-  },
+  { persist: true },
 )
