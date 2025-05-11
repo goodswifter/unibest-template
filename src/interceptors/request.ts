@@ -1,16 +1,13 @@
 import qs from 'qs'
 import { useUserStore } from '@/store'
 import { platform } from '@/utils/platform'
-import { getEnvBaseUrl } from '@/utils'
+import { BASE_URL } from '@/config/env'
 
 export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
   /** 出错时是否隐藏错误提示 */
   hideErrorToast?: boolean
 } & UniUploadFileReq // 添加uni.uploadFile参数类型
-
-// 请求基准地址
-const baseUrl = getEnvBaseUrl()
 
 // 拦截器配置
 const httpInterceptor = {
@@ -34,12 +31,13 @@ const httpInterceptor = {
         // 自动拼接代理前缀
         options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
       } else {
-        options.url = baseUrl + options.url
+        options.url = BASE_URL + options.url
       }
       // #endif
+      console.log(BASE_URL, '====')
       // 非H5正常拼接
       // #ifndef H5
-      options.url = baseUrl + options.url
+      options.url = BASE_URL + options.url
       // #endif
       // TIPS: 如果需要对接多个后端服务，也可以在这里处理，拼接成所需要的地址
     }

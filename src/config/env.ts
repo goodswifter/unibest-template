@@ -41,10 +41,13 @@ const urlMap: urlMapType = {
 type urlPreFixType = Record<keyof typeof urlMap, string>
 
 /** 是否是生产 **/
-const IS_PROD = import.meta.env.VITE_NODE_ENV === EnvKeyEnum.production
+const IS_PROD = import.meta.env.MODE === EnvKeyEnum.production
+// const IS_PROD = import.meta.env.VITE_NODE_ENV === EnvKeyEnum.production
 
 /** 环境变量 **/
-const NODE_ENV = import.meta.env.VITE_NODE_ENV
+const NODE_ENV = import.meta.env.MODE
+// const NODE_ENV = import.meta.env.VITE_NODE_ENV
+console.log(import.meta.env, '=====')
 
 /** 各个服务url前缀 */
 const URL_PRE_FIX: urlPreFixType = {}

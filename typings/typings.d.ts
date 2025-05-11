@@ -10,7 +10,7 @@ declare global {
     /** 是否成功 */
     succeed: boolean
     /** 总条数 */
-    total: number
+    total?: number
 
     [property: string]: any
   }

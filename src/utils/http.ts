@@ -1,28 +1,10 @@
 import { CustomRequestOptions } from '@/interceptors/request'
 
-// HTTP 配置对象
-export const httpConfig = {
-  baseURL: '/gateway',
-}
-
-const GATEWAY = '/gateway'
-
-// 处理 URL
-const handleUrl = (url: string) => {
-  if (httpConfig.baseURL && !url.startsWith('http')) {
-    const apiUrl = url.startsWith('/') ? url : `/${url}`
-    return `${GATEWAY}${apiUrl}`
-  }
-
-  return url
-}
-
 export const http = <T>(options: CustomRequestOptions) => {
   // 1. 返回 Promise 对象
   return new Promise<BaseRes<T>>((resolve, reject) => {
     uni.request({
       ...options,
-      url: handleUrl(options.url),
       dataType: 'json',
       // #ifndef MP-WEIXIN
       responseType: 'json',
@@ -30,31 +12,55 @@ export const http = <T>(options: CustomRequestOptions) => {
       // 响应成功
       success(res) {
         // 状态码 2xx，参考 axios 的设计
+        const data = res.data as BaseRes<T>
         if (res.statusCode >= 200 && res.statusCode < 300) {
+          console.log('-----')
+          if (data.succeed) {
+            resolve(data)
+          } else {
+            // TODO: 错误提示多行处理
+            // nextTick(() => {
+            //   const toast = useToast()
+            //   toast.text(data.message || '请求错误消息')
+            // })
+            uni.showToast({
+              icon: 'none',
+              title: data.message || '请求错误消息',
+            })
+            reject(data)
+          }
           // 2.1 提取核心数据 res.data
-          resolve(res.data as BaseRes<T>)
         } else if (res.statusCode === 401) {
           // 401错误  -> 清理用户信息，跳转到登录页
           // userStore.clearUserInfo()
           // uni.navigateTo({ url: '/pages/login/login' })
-          reject(res)
+          reject(data)
         } else {
           // 其他错误 -> 根据后端错误信息轻提示
           !options.hideErrorToast &&
             uni.showToast({
               icon: 'none',
-              title: (res.data as BaseRes<T>).msg || '请求错误',
+              title: data.message || '请求错误',
             })
-          reject(res)
+          reject(data)
         }
       },
       // 响应失败
       fail(err) {
+        console.log('--fail---', err)
         uni.showToast({
           icon: 'none',
           title: '网络错误，换个网络试试',
         })
-        reject(err)
+
+        const data = {
+          code: '',
+          succeed: false,
+          message: err as any,
+          model: null as any,
+        } as BaseRes<T>
+
+        reject(data)
       },
     })
   })

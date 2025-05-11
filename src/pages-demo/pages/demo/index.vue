@@ -15,8 +15,16 @@
 
 <script lang="ts" setup>
 import { MenusFunId } from '@/enum/menuFuncId'
+import { getUserInfo } from '@/api/common'
 
 const checkMenuAuth = () => {
   useCheckMenuAuth(MenusFunId.MENUS_DEMO)
 }
+getUserInfo()
+  .then(res => {
+    console.log(res)
+  })
+  .finally(() => {
+    console.log('end')
+  })
 </script>
