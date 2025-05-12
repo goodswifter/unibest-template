@@ -6,6 +6,8 @@ export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
   /** 出错时是否隐藏错误提示 */
   hideErrorToast?: boolean
+  /** url前缀 */
+  urlPrefix?: string
 } & UniUploadFileReq // 添加uni.uploadFile参数类型
 
 // 拦截器配置

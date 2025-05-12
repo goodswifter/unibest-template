@@ -11,8 +11,9 @@ export interface IFooItem {
  * 获取字典项
  */
 export function orchctmsDictionaryIds(dictCodeList: string[]) {
-  return http.post<IFooItem>(ApiPreFixEnum.CTP_PORTAL + '/dict/queryValidValueList', {
-    dictCodeList,
+  return http.post<IFooItem>({
+    url: ApiPreFixEnum.CTP_PORTAL + '/dict/queryValidValueList',
+    data: { dictCodeList },
   })
 }
 
@@ -30,5 +31,8 @@ export const getPriceTypes = (unitType: UnitTypeEnum = UnitTypeEnum.MEASURE_AND_
   } else if (unitType == UnitTypeEnum.PRICING) {
     data = { pricingUnit: 1 }
   }
-  return http.post<PriceTypeModel[]>(ApiPreFixEnum.CTP_PORTAL + '/pricingType/query', data)
+  return http.post<PriceTypeModel[]>({
+    url: ApiPreFixEnum.CTP_PORTAL + '/pricingType/query',
+    data,
+  })
 }
