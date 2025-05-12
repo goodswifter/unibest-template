@@ -19,7 +19,7 @@ export function createApp() {
   // 测试
   setTimeout(() => {
     commonApi.getPriceTypes().then(res => {
-      console.log(res, 'res111')
+      console.log(res.model[0], 'res111')
     })
   }, 1000)
 

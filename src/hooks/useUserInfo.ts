@@ -1,11 +1,11 @@
 import { userApi } from '@/api'
 
-export default function useUser() {
+export const useUserInfo = () => {
   const userInfo = reactive({})
   const userFunction = reactive([])
   const userFunIds = reactive([])
 
-  const load = async function () {
+  const load = async () => {
     return Promise.all([userApi.getUserInfo(), userApi.getUserFunction()]).then(res => {
       const [info, fun] = res
 
@@ -21,10 +21,9 @@ export default function useUser() {
   }
 
   /** 验证是否有菜单权限 **/
-  const checkMenuAuth = function (funcId: string) {
+  const checkMenuAuth = (funcId: string) => {
     const hasAuth = userFunIds.includes(funcId)
     if (!hasAuth) {
-      console.log('11', hasAuth, '暂无菜单权限')
       uni.showToast({
         icon: 'none',
         title: '暂无菜单权限',

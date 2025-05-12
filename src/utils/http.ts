@@ -30,7 +30,7 @@ export const http = <T>(options: CustomRequestOptions) => {
             // })
             uni.showToast({
               icon: 'none',
-              title: data.message || '请求错误消息',
+              title: data.message + '---' || '请求错误消息',
             })
             reject(data)
           }
@@ -71,17 +71,6 @@ export const http = <T>(options: CustomRequestOptions) => {
   })
 }
 
-type HttpOptions = {
-  url: string
-  data?: Recordable
-  query?: Recordable
-  header?: Recordable
-  /** 网关 */
-  gateway?: string
-  /** url前缀 */
-  urlPrefix?: string
-}
-
 /**
  * GET 请求
  * @param url 后台地址
@@ -89,12 +78,20 @@ type HttpOptions = {
  * @param header 请求头，默认为json格式
  * @returns
  */
-export const httpGet = <T>({ url, query, header }: HttpOptions) => {
+export const httpGet = <T>({
+  url,
+  query,
+  header,
+  hideErrorToast,
+  urlPrefix,
+}: CustomRequestOptions) => {
   return http<T>({
     url,
     query,
     method: 'GET',
     header,
+    hideErrorToast,
+    urlPrefix,
   })
 }
 
@@ -106,13 +103,22 @@ export const httpGet = <T>({ url, query, header }: HttpOptions) => {
  * @param header 请求头，默认为json格式
  * @returns
  */
-export const httpPost = <T>({ url, data, query, header }: HttpOptions) => {
+export const httpPost = <T>({
+  url,
+  data,
+  query,
+  header,
+  hideErrorToast,
+  urlPrefix,
+}: CustomRequestOptions) => {
   return http<T>({
     url,
     query,
     data,
     method: 'POST',
     header,
+    hideErrorToast,
+    urlPrefix,
   })
 }
 

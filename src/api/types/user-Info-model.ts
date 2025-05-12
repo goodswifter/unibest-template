@@ -1,7 +1,7 @@
 /*
  * 用户信息
  */
-export interface IUserInfo {
+export interface UserInfoModel {
   userId: string
   category: string
   username: string

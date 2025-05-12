@@ -125,7 +125,18 @@
           "path": "pages/info/index",
           "type": "home",
           "style": {
-            "navigationBarTitleText": "首页1"
+            "navigationBarTitleText": "首页1",
+            "componentPlaceholder": {
+              "wl-text": "view"
+            }
+          }
+        },
+        {
+          "path": "pages/login/index",
+          "type": "page",
+          "layout": "default",
+          "style": {
+            "navigationBarTitleText": "登录"
           }
         },
         {
@@ -160,6 +171,13 @@
           "layout": "default",
           "style": {
             "navigationBarTitleText": "详情"
+          }
+        },
+        {
+          "path": "pages/mine/auth/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "demo"
           }
         },
         {

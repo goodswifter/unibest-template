@@ -19,6 +19,9 @@
     <view class="my-16 flex justify-center">
       <nut-button @click="handleClick">点击跳转详情</nut-button>
     </view>
+    <view class="my-16 flex justify-center">
+      <nut-button @click="onLogin">点击跳转登录</nut-button>
+    </view>
   </view>
 </template>
 
@@ -56,6 +59,12 @@ const handleClick = () => {
   })
 }
 
+const onLogin = () => {
+  uni.navigateTo({
+    url: '/pages-sub/pages/login/index',
+  })
+}
+
 commonApi
   .getPriceTypes()
   .then(res => {
@@ -69,5 +78,7 @@ commonApi
 <style lang="scss" scoped>
 .main-title-color {
   color: #d14328;
+
+  @apply overflow-hidden bg-white px-16 pt-8;
 }
 </style>

@@ -3,6 +3,9 @@
 {
   style: {
     navigationBarTitleText: '首页1',
+    componentPlaceholder: {
+      'wl-text': 'view',
+    },
   },
 }
 </route>
@@ -30,6 +33,7 @@
     <view class="my-16 flex justify-center">
       <nut-button @click="onToast">toast</nut-button>
     </view>
+    <wl-text />
     <view class="my-16 flex justify-center">
       <nut-button @click="handleClick">点击跳转详情</nut-button>
     </view>
@@ -63,7 +67,7 @@ const onToast = () => {
 
 const handleClick = () => {
   uni.navigateTo({
-    url: '/pages-sub/pages-home/detail/index',
+    url: '/pages-sub/pages/home/detail/index',
   })
 }
 </script>

@@ -1,5 +1,5 @@
 import { http } from '@/utils/http'
-import type { IUserFunctionItem, IUserInfo } from '@/api/types'
+import type { IUserFunctionItem, UserInfoModel } from '@/api/types'
 import { ApiPrefixEnum } from '@/enum'
 
 /**
@@ -17,7 +17,7 @@ export function getUserFunction() {
  * 获取用户信息
  */
 export function getUserInfo() {
-  return http.post<IUserInfo>({
+  return http.post<UserInfoModel>({
     url: '/Platformumuserbaseinfo/getUserInfo',
     urlPrefix: ApiPrefixEnum.CTP_USER,
     data: {},
