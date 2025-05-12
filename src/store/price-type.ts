@@ -16,5 +16,5 @@ export const usePriceTypeStore = defineStore(
       getPriceTypes,
     }
   },
-  { persist: { storage: sessionStorage } },
+  { persist: true },
 )
