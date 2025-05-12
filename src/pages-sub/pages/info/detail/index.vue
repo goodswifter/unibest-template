@@ -9,7 +9,7 @@
 
 <template>
   <view class="bg-white">
-    <view class="main-title-color text-16xl mt-4 text-center">unibest</view>
+    <view class="main-title-color text-16xl mt-4 text-center">资讯详情</view>
   </view>
 </template>
 
