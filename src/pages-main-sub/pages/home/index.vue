@@ -6,6 +6,7 @@
   },
 }
 </route>
+
 <template>
   <view
     class="overflow-hidden bg-white px-16 pt-8"
@@ -25,6 +26,7 @@
 import { TestEnum } from '@/enum/typings'
 import { ref } from 'vue'
 import { orchctmsDictionaryIds } from '@/pages-main-sub/api/home'
+import { commonApi } from '@/api'
 
 defineOptions({
   name: 'Home',
@@ -55,6 +57,15 @@ const handleClick = () => {
     url: '/pages-sub/pages-home/detail/index',
   })
 }
+
+commonApi
+  .getPriceTypes()
+  .then(res => {
+    console.log(res, 'res')
+  })
+  .catch(err => {
+    console.log(err, 'err')
+  })
 </script>
 
 <style lang="scss" scoped>

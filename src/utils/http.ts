@@ -1,6 +1,7 @@
 import { CustomRequestOptions } from '@/interceptors/request'
 
 export const http = <T>(options: CustomRequestOptions) => {
+  console.log(options, 'options')
   // 1. 返回 Promise 对象
   return new Promise<BaseRes<T>>((resolve, reject) => {
     uni.request({

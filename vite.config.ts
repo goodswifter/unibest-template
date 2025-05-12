@@ -71,7 +71,7 @@ export default ({ command, mode }) => {
       sourcemap: VITE_SHOW_SOURCEMAP === 'true', // 默认是false
       target: 'es6',
       // 开发环境不用压缩
-      minify: mode === 'development' ? false : 'terser',
+      minify: mode === 'dev' ? false : 'terser',
       terserOptions: {
         compress: {
           drop_console: VITE_DELETE_CONSOLE === 'true',

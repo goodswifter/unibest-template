@@ -7,6 +7,8 @@ export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
   /** 出错时是否隐藏错误提示 */
   hideErrorToast?: boolean
+  /** url前缀 */
+  urlPrefix?: string
 } & UniUploadFileReq // 添加uni.uploadFile参数类型
 
 // 拦截器配置
@@ -29,7 +31,7 @@ const httpInterceptor = {
       // console.log(__VITE_APP_PROXY__)
       if (JSON.parse(__VITE_APP_PROXY__)) {
         // 自动拼接代理前缀
-        // options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
+        options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
       } else {
         options.url = BASE_URL + options.url
       }
