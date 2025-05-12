@@ -1,5 +1,5 @@
 import { http } from '@/utils/http'
-import { ApiPreFixEnum } from '@/enum'
+import { ApiPrefixEnum } from '@/enum'
 
 export interface IFooItem {
   id: string
@@ -10,7 +10,7 @@ export interface IFooItem {
  * 获取字典项
  */
 export function orchctmsDictionaryIds(dictCodeList: string[]) {
-  return http.post<IFooItem>(ApiPreFixEnum.CTP_PORTAL + '/dict/queryValidValueList', {
+  return http.post<IFooItem>(ApiPrefixEnum.CTP_PORTAL + '/dict/queryValidValueList', {
     dictCodeList,
   })
 }

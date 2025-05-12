@@ -1,6 +1,6 @@
 import { http } from '@/utils/http'
 import type { PriceTypeModel } from '@/api/types'
-import { UnitTypeEnum, ApiPreFixEnum } from '@/enum'
+import { UnitTypeEnum } from '@/enum'
 
 export interface IFooItem {
   id: string
@@ -12,7 +12,7 @@ export interface IFooItem {
  */
 export function orchctmsDictionaryIds(dictCodeList: string[]) {
   return http.post<IFooItem>({
-    url: ApiPreFixEnum.CTP_PORTAL + '/dict/queryValidValueList',
+    url: '/dict/queryValidValueList',
     data: { dictCodeList },
   })
 }
@@ -32,7 +32,7 @@ export const getPriceTypes = (unitType: UnitTypeEnum = UnitTypeEnum.MEASURE_AND_
     data = { pricingUnit: 1 }
   }
   return http.post<PriceTypeModel[]>({
-    url: ApiPreFixEnum.CTP_PORTAL + '/pricingType/query',
+    url: '/pricingType/query',
     data,
   })
 }

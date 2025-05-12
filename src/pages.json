@@ -115,7 +115,25 @@
       "root": "pages-sub",
       "pages": [
         {
-          "path": "pages-about/index",
+          "path": "pages/home/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "demo"
+          }
+        },
+        {
+          "path": "pages/info/index",
+          "type": "home",
+          "style": {
+            "navigationBarTitleText": "首页1"
+          }
+        },
+        {
+          "path": "pages/mine/index",
+          "type": "page"
+        },
+        {
+          "path": "pages/product/index",
           "type": "page",
           "style": {
             "navigationBarTitleText": "关于",
@@ -125,14 +143,27 @@
           }
         },
         {
-          "path": "pages-home/index",
-          "type": "home",
+          "path": "pages/shop-cart/index",
+          "type": "page"
+        },
+        {
+          "path": "pages/home/detail/index",
+          "type": "page",
+          "layout": "default",
           "style": {
-            "navigationBarTitleText": "首页1"
+            "navigationBarTitleText": "详情"
           }
         },
         {
-          "path": "pages-about/cpns/request",
+          "path": "pages/info/detail/index",
+          "type": "page",
+          "layout": "default",
+          "style": {
+            "navigationBarTitleText": "详情"
+          }
+        },
+        {
+          "path": "pages/product/cpns/request",
           "type": "page",
           "layout": "demo",
           "style": {
@@ -140,35 +171,11 @@
           }
         },
         {
-          "path": "pages-about/cpns/upload",
+          "path": "pages/product/cpns/upload",
           "type": "page",
           "layout": "default",
           "style": {
             "navigationBarTitleText": "上传-状态一体化"
-          }
-        },
-        {
-          "path": "pages-home/detail/index",
-          "type": "page",
-          "layout": "default",
-          "style": {
-            "navigationBarTitleText": "详情"
-          }
-        }
-      ]
-    },
-    {
-      "root": "pages-main-sub",
-      "pages": [
-        {
-          "path": "pages/about/index",
-          "type": "page"
-        },
-        {
-          "path": "pages/home/index",
-          "type": "page",
-          "style": {
-            "navigationBarTitleText": "demo"
           }
         }
       ]
@@ -181,18 +188,6 @@
           "type": "page",
           "style": {
             "navigationBarTitleText": "站位分包"
-          }
-        }
-      ]
-    },
-    {
-      "root": "pages-demo",
-      "pages": [
-        {
-          "path": "pages/demo/index",
-          "type": "page",
-          "style": {
-            "navigationBarTitleText": "demo"
           }
         }
       ]

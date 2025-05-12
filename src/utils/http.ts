@@ -1,7 +1,11 @@
+import { ApiPrefixEnum } from '@/enum'
 import { CustomRequestOptions } from '@/interceptors/request'
 
 export const http = <T>(options: CustomRequestOptions) => {
-  console.log(options, 'options')
+  // 设置默认值
+  options.urlPrefix ||= ApiPrefixEnum.CTP_PORTAL
+  options.gateway ||= import.meta.env.VITE_APP_PROXY_PREFIX
+
   // 1. 返回 Promise 对象
   return new Promise<BaseRes<T>>((resolve, reject) => {
     uni.request({
@@ -72,6 +76,10 @@ type HttpOptions = {
   data?: Recordable
   query?: Recordable
   header?: Recordable
+  /** 网关 */
+  gateway?: string
+  /** url前缀 */
+  urlPrefix?: string
 }
 
 /**

@@ -1,20 +1,25 @@
 import { http } from '@/utils/http'
 import type { IUserFunctionItem, IUserInfo } from '@/api/types'
-import { ApiPreFixEnum } from '@/enum'
+import { ApiPrefixEnum } from '@/enum'
 
 /**
  * 获取用户菜单
  */
 export function getUserFunction() {
-  return http.post<IUserFunctionItem[]>(
-    ApiPreFixEnum.CTP_USER + '/user/userInfo/getUserFunction',
-    {},
-  )
+  return http.post<IUserFunctionItem[]>({
+    url: '/user/userInfo/getUserFunction',
+    urlPrefix: ApiPrefixEnum.CTP_USER,
+    data: {},
+  })
 }
 
 /**
  * 获取用户信息
  */
 export function getUserInfo() {
-  return http.post<IUserInfo>(ApiPreFixEnum.CTP_USER + '/Platformumuserbaseinfo/getUserInfo', {})
+  return http.post<IUserInfo>({
+    url: '/Platformumuserbaseinfo/getUserInfo',
+    urlPrefix: ApiPrefixEnum.CTP_USER,
+    data: {},
+  })
 }

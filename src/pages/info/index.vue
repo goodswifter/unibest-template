@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import SubHome from '@/pages-sub/pages-home/index.vue'
+import SubHome from '@/pages-sub/pages/info/index.vue'
 
 defineOptions({
   name: '',

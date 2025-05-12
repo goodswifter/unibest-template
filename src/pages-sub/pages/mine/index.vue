@@ -15,7 +15,6 @@
 </template>
 
 <script lang="ts" setup>
-import { TestEnum } from '@/enum/typings'
 import { ref } from 'vue'
 
 defineOptions({
@@ -28,7 +27,6 @@ const author = ref('菲鸽')
 // 测试 uni API 自动引入
 onLoad(() => {
   console.log(author)
-  console.log(TestEnum.A)
 })
 
 // toast

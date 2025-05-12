@@ -56,15 +56,12 @@ export default ({ command, mode }) => {
       hmr: true,
       port: Number.parseInt(VITE_APP_PORT, 10),
       // 仅 H5 端生效，其他端不生效（其他端走build，不走devServer)
-      proxy: JSON.parse(VITE_APP_PROXY)
-        ? {
-            [VITE_APP_PROXY_PREFIX]: {
-              target: VITE_BASE_URL,
-              changeOrigin: true,
-              // rewrite: path => path.replace(new RegExp(`^${VITE_APP_PROXY_PREFIX}`), ''),
-            },
-          }
-        : undefined,
+      proxy: {
+        [VITE_APP_PROXY_PREFIX]: {
+          target: VITE_BASE_URL,
+          changeOrigin: true,
+        },
+      },
     },
     build: {
       // 方便非h5端调试

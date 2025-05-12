@@ -16,9 +16,12 @@ export function createApp() {
   app.use(prototypeInterceptor)
   app.use(VueQueryPlugin)
 
-  commonApi.getPriceTypes().then(res => {
-    console.log(res, 'res111')
-  })
+  // 测试
+  setTimeout(() => {
+    commonApi.getPriceTypes().then(res => {
+      console.log(res, 'res111')
+    })
+  }, 1000)
 
   return {
     app,

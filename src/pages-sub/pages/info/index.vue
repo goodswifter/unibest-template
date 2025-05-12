@@ -37,7 +37,6 @@
 </template>
 
 <script lang="ts" setup>
-import { TestEnum } from '@/enum/typings'
 import PLATFORM from '@/utils/platform'
 import { ref } from 'vue'
 
@@ -54,7 +53,6 @@ const description = ref(
 // 测试 uni API 自动引入
 onLoad(() => {
   console.log(author)
-  console.log(TestEnum.A)
 })
 
 // toast

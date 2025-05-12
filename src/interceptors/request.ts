@@ -6,6 +6,8 @@ export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
   /** 出错时是否隐藏错误提示 */
   hideErrorToast?: boolean
+  /** 网关 */
+  gateway?: string
   /** url前缀 */
   urlPrefix?: string
 } & UniUploadFileReq // 添加uni.uploadFile参数类型
@@ -24,22 +26,15 @@ const httpInterceptor = {
       }
     }
 
-    console.log(__VITE_APP_PROXY__, '--__VITE_APP_PROXY__---')
     // 非 http 开头需拼接地址
     if (!options.url.startsWith('http')) {
       // #ifdef H5
-      if (JSON.parse(__VITE_APP_PROXY__)) {
-        // 自动拼接代理前缀
-        // options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
-        options.url = BASE_URL + options.url
-      } else {
-        options.url = BASE_URL + options.url
-      }
+      options.url = BASE_URL + options.gateway + options.urlPrefix + options.url
       // #endif
       console.log(BASE_URL, '====', options.url)
       // 非H5正常拼接
       // #ifndef H5
-      options.url = BASE_URL + options.url
+      options.url = BASE_URL + options.gateway + options.urlPrefix + options.url
       // #endif
       // TIPS: 如果需要对接多个后端服务，也可以在这里处理，拼接成所需要的地址
     }
