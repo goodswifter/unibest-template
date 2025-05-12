@@ -6,6 +6,7 @@
   },
 }
 </route>
+
 <template>
   <view
     class="overflow-hidden bg-white px-16 pt-8"

@@ -1,5 +1,5 @@
 import { http } from '@/utils/http'
-import type { IUserFunctionItem, PriceTypeModel } from '@/api/types'
+import type { PriceTypeModel } from '@/api/types'
 import { UnitTypeEnum, ApiPreFixEnum } from '@/enum'
 
 export interface IFooItem {
@@ -14,16 +14,6 @@ export function orchctmsDictionaryIds(dictCodeList: string[]) {
   return http.post<IFooItem>(ApiPreFixEnum.CTP_PORTAL + '/dict/queryValidValueList', {
     dictCodeList,
   })
-}
-
-/**
- * 获取用户信息
- */
-export function getUserInfo() {
-  return http.post<IUserFunctionItem>(
-    ApiPreFixEnum.CTP_USER + '/Platformumuserbaseinfo/getUserInfo',
-    {},
-  )
 }
 
 /**

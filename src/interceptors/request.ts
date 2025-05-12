@@ -1,5 +1,4 @@
 import qs from 'qs'
-import { useUserStore } from '@/store'
 import { platform } from '@/utils/platform'
 import { BASE_URL } from '@/config/env'
 
@@ -23,18 +22,19 @@ const httpInterceptor = {
       }
     }
 
+    console.log(__VITE_APP_PROXY__, '--__VITE_APP_PROXY__---')
     // 非 http 开头需拼接地址
     if (!options.url.startsWith('http')) {
       // #ifdef H5
-      // console.log(__VITE_APP_PROXY__)
       if (JSON.parse(__VITE_APP_PROXY__)) {
         // 自动拼接代理前缀
         // options.url = import.meta.env.VITE_APP_PROXY_PREFIX + options.url
+        options.url = BASE_URL + options.url
       } else {
         options.url = BASE_URL + options.url
       }
       // #endif
-      console.log(BASE_URL, '====')
+      console.log(BASE_URL, '====', options.url)
       // 非H5正常拼接
       // #ifndef H5
       options.url = BASE_URL + options.url
@@ -49,10 +49,11 @@ const httpInterceptor = {
       ...options.header,
     }
     // 3. 添加 token 请求头标识
-    const userStore = useUserStore()
-    const { token } = userStore.userInfo as unknown as UserModel
+    // const userStore = useUserStore()
+    // const { token } = userStore.userInfo as unknown as UserModel
+    const token = `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJjbGVudElkXCI6XCIxOTIxNzQ1NjAzMzcwNjY4MDMyXCIsXCJmbGFnXCI6MCxcImxvZ2luSWRcIjpcIjA4MzRkYWViMzAyYjRlZjZhMzFhZDIzYzkwYjJhZjE0XCIsXCJsb2dpbk5hbWVcIjpcInRlc3QwMVwiLFwibG9naW5WZXJzaW9uQ29kZVwiOjE3NDcwMTQ4MzA4MDcsXCJ1c2VyQmFzZUlkXCI6XCJiMTBmZjViMzQ3ZTU0NDJjYTM2MWU5OWIyYTU5MWFjOVwiLFwidXNlcm5hbWVcIjpcIui1teWkp-WKm1wifSIsImlhdCI6MTc0NzAxNDgzMCwiZXhwIjoxNzQ3NjE5NjMwfQ.ehWt8jVSrhiRJKhNDFxqMiFCbnCsIVdWocLhl94hdO0`
     if (token) {
-      options.header.Authorization = `Bearer ${token}`
+      options.header.Authorization = token
     }
   },
 }
