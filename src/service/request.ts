@@ -1,4 +1,4 @@
-import { CustomRequestOptions } from '@/interceptors/request'
+import { CustomRequestOptions } from './interceptors/request'
 
 /**
  * 请求方法: 主要是对 uni.request 的封装，去适配 openapi-ts-request 的 request 方法

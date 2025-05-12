@@ -1,5 +1,5 @@
 import { ApiPrefixEnum } from '@/enum'
-import { CustomRequestOptions } from '@/interceptors/request'
+import { CustomRequestOptions } from './interceptors/request'
 
 export const http = <T>(options: CustomRequestOptions) => {
   // 设置默认值

@@ -1,4 +1,4 @@
-import { http } from '@/utils/http'
+import { http } from '@/service/http'
 import { ApiPrefixEnum } from '@/enum'
 
 export interface IFooItem {

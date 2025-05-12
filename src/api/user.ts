@@ -1,4 +1,4 @@
-import { http } from '@/utils/http'
+import { http } from '@/service/http'
 import type { IUserFunctionItem, UserInfoModel } from '@/api/types'
 import { ApiPrefixEnum } from '@/enum'
 

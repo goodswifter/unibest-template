@@ -27,7 +27,7 @@ const httpInterceptor = {
     }
 
     // 非 http 开头需拼接地址
-    if (!options.url.startsWith('http')) {
+    if (!options.url?.startsWith('http')) {
       // #ifdef H5
       options.url = BASE_URL + options.gateway + options.urlPrefix + options.url
       // #endif

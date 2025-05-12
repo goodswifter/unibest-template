@@ -1,4 +1,4 @@
-import { http } from '@/utils/http'
+import { http } from '@/service/http'
 import type { PriceTypeModel } from '@/api/types'
 import { UnitTypeEnum } from '@/enum'
 

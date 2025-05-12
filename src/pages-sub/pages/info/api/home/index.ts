@@ -1,5 +1,5 @@
 import type { TestRes } from './types'
-import { http } from '@/utils/http'
+import { http } from '@/service/http'
 
 export const getTestData = () => {
   return http.post<TestRes>('/gateway/ctp-portal/content/category/list', {

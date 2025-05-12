@@ -4,7 +4,7 @@ import 'virtual:uno.css'
 import { createSSRApp } from 'vue'
 
 import App from './App.vue'
-import { prototypeInterceptor, requestInterceptor, routeInterceptor } from './interceptors'
+import { prototypeInterceptor, requestInterceptor, routeInterceptor } from './service/interceptors'
 import pinia from './store'
 import { commonApi } from './api'
 

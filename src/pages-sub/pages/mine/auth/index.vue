@@ -17,11 +17,11 @@
 import { MenusFuncId } from '@/enum'
 import { userApi } from '@/api'
 
-useUserInfo()
-  .load()
-  .then(res => {
-    console.log(res, '---')
-  })
+const userHook = useUserInfo()
+
+userHook.load().then(res => {
+  console.log(res, '---')
+})
 
 const checkMenuAuth = () => {
   useUserInfo().checkMenuAuth(MenusFuncId.MENUS_DEMO)
