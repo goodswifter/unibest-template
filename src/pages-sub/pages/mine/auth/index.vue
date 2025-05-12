@@ -14,7 +14,6 @@
 </template>
 
 <script lang="ts" setup>
-import { MenusFuncId } from '@/enum'
 import { userApi } from '@/api'
 
 const userHook = useUserInfo()

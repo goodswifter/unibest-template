@@ -1,4 +1,3 @@
-import { ApiPrefixEnum } from '@/enum'
 import { CustomRequestOptions } from './interceptors/request'
 
 export const http = <T>(options: CustomRequestOptions) => {

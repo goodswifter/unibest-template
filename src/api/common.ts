@@ -1,6 +1,5 @@
 import { http } from '@/service/http'
 import type { PriceTypeModel } from '@/api/types'
-import { UnitTypeEnum } from '@/enum'
 
 export interface IFooItem {
   id: string

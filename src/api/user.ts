@@ -1,6 +1,5 @@
 import { http } from '@/service/http'
 import type { IUserFunctionItem, UserInfoModel } from '@/api/types'
-import { ApiPrefixEnum } from '@/enum'
 
 /**
  * 获取用户菜单
