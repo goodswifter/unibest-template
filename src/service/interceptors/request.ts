@@ -1,6 +1,5 @@
 import qs from 'qs'
 import { platform } from '@/utils/platform'
-import { BASE_URL } from '@/config/env'
 
 export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
@@ -28,13 +27,14 @@ const httpInterceptor = {
 
     // 非 http 开头需拼接地址
     if (!options.url?.startsWith('http')) {
+      const baseUrl = import.meta.env.VITE_BASE_URL
       // #ifdef H5
-      options.url = BASE_URL + options.gateway + options.urlPrefix + options.url
+      options.url = baseUrl + options.gateway + options.urlPrefix + options.url
       // #endif
-      console.log(BASE_URL, '====', options.url)
+      console.log(baseUrl, '====', options.url)
       // 非H5正常拼接
       // #ifndef H5
-      options.url = BASE_URL + options.gateway + options.urlPrefix + options.url
+      options.url = baseUrl + options.gateway + options.urlPrefix + options.url
       // #endif
       // TIPS: 如果需要对接多个后端服务，也可以在这里处理，拼接成所需要的地址
     }
