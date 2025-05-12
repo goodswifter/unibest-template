@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import { getPluginsList } from './build/vite-plugins'

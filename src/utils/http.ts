@@ -66,6 +66,13 @@ export const http = <T>(options: CustomRequestOptions) => {
   })
 }
 
+type HttpOptions = {
+  url: string
+  data?: Recordable
+  query?: Recordable
+  header?: Recordable
+}
+
 /**
  * GET 请求
  * @param url 后台地址
@@ -73,11 +80,7 @@ export const http = <T>(options: CustomRequestOptions) => {
  * @param header 请求头，默认为json格式
  * @returns
  */
-export const httpGet = <T>(
-  url: string,
-  query?: Record<string, any>,
-  header?: Record<string, any>,
-) => {
+export const httpGet = <T>({ url, query, header }: HttpOptions) => {
   return http<T>({
     url,
     query,
@@ -94,12 +97,7 @@ export const httpGet = <T>(
  * @param header 请求头，默认为json格式
  * @returns
  */
-export const httpPost = <T>(
-  url: string,
-  data?: Record<string, any>,
-  query?: Record<string, any>,
-  header?: Record<string, any>,
-) => {
+export const httpPost = <T>({ url, data, query, header }: HttpOptions) => {
   return http<T>({
     url,
     query,
