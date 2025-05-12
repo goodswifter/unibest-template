@@ -32,7 +32,7 @@ export const getPriceTypes = (unitType: UnitTypeEnum = UnitTypeEnum.MEASURE_AND_
     data = { pricingUnit: 1 }
   }
   return http.post<PriceTypeModel[]>({
-    url: '/pricingType/query',
+    url: 'https://ctpdelta.10000da.vip/gateway/ctp-portal/pricingType/query',
     data,
   })
 }
