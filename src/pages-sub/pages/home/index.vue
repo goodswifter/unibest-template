@@ -27,30 +27,16 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { orchctmsDictionaryIds } from '@/pages-sub/api/home'
-import { commonApi } from '@/api'
-
 defineOptions({
   name: 'Home',
 })
 
-orchctmsDictionaryIds([]).then(res => {
-  console.log(res)
-})
 // 获取屏幕边界到安全区域距离
 const { safeAreaInsets } = uni.getSystemInfoSync()
-const author = ref('菲鸽')
-
-// 测试 uni API 自动引入
-onLoad(() => {
-  console.log(author)
-})
 
 // toast
 const toast = useToast()
 const onToast = () => {
-  console.log(1111)
   toast.text('-toast-今天心情好吗，今天是一个好日子，来一首歌')
 }
 
@@ -65,15 +51,6 @@ const onLogin = () => {
     url: '/pages-sub/pages/login/index',
   })
 }
-
-commonApi
-  .getPriceTypes()
-  .then(res => {
-    console.log(res, 'res')
-  })
-  .catch(err => {
-    console.log(err, 'err')
-  })
 </script>
 
 <style lang="scss" scoped>

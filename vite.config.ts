@@ -8,17 +8,10 @@ export default ({ command, mode }) => {
   // console.log(mode === process.env.NODE_ENV) // true
 
   // mode: 区分生产环境还是开发环境
-  console.log('command, mode -> ', command, mode)
-  // pnpm dev:h5 时得到 => serve development
-  // pnpm build:h5 时得到 => build production
-  // pnpm dev:mp-weixin 时得到 => build development (注意区别，command为build)
-  // pnpm build:mp-weixin 时得到 => build production
-  // pnpm dev:app 时得到 => build development (注意区别，command为build)
-  // pnpm build:app 时得到 => build production
-  // dev 和 build 命令可以分别使用 .env.development 和 .env.production 的环境变量
+  // console.log('command, mode -> ', command, mode)
 
   const { UNI_PLATFORM } = process.env
-  console.log('UNI_PLATFORM -> ', UNI_PLATFORM) // 得到 mp-weixin, h5, app 等
+  // console.log('UNI_PLATFORM -> ', UNI_PLATFORM) // 得到 mp-weixin, h5, app 等
 
   const env = loadEnv(mode, path.resolve(process.cwd()))
   const {
@@ -29,7 +22,7 @@ export default ({ command, mode }) => {
     VITE_APP_PROXY,
     VITE_APP_PROXY_PREFIX,
   } = env
-  console.log('环境变量 env -> ', env)
+  // console.log('环境变量 env -> ', env)
 
   return defineConfig({
     plugins: getPluginsList({ mode, UNI_PLATFORM: UNI_PLATFORM || '' }),

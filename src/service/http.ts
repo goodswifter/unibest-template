@@ -18,7 +18,6 @@ export const http = <T>(options: CustomRequestOptions) => {
         // 状态码 2xx，参考 axios 的设计
         const data = res.data as BaseRes<T>
         if (res.statusCode >= 200 && res.statusCode < 300) {
-          console.log('-----')
           if (data.succeed) {
             resolve(data)
           } else {

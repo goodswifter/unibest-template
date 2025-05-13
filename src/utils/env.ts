@@ -4,11 +4,8 @@ import { isMpWeixin } from './platform'
  * 根据微信小程序当前环境，判断应该获取的 baseUrl
  */
 export const getEnvBaseUrl = () => {
-  console.log('getEnvBaseUrl 函数被调用')
   // 请求基准地址
   let baseUrl = import.meta.env.VITE_BASE_URL
-  console.log('环境变量 VITE_BASE_URL:', import.meta.env.VITE_BASE_URL)
-  console.log('当前 baseUrl:', baseUrl)
 
   // 微信小程序端环境区分
   if (isMpWeixin) {

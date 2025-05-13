@@ -31,7 +31,7 @@ const httpInterceptor = {
       // #ifdef H5
       options.url = baseUrl + options.gateway + options.urlPrefix + options.url
       // #endif
-      console.log(baseUrl, '====', options.url)
+
       // 非H5正常拼接
       // #ifndef H5
       options.url = baseUrl + options.gateway + options.urlPrefix + options.url

@@ -22,6 +22,4 @@ import SubHome from '@/pages-sub/pages/home/index.vue'
 defineOptions({
   name: 'Home',
 })
-
-console.log('首页加载完毕')
 </script>

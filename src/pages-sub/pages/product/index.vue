@@ -29,7 +29,6 @@ import UploadComp from './cpns/upload.vue'
 
 // 获取屏幕边界到安全区域距离
 const { safeAreaInsets } = uni.getSystemInfoSync()
-console.log('预加载成功')
 </script>
 
 <style lang="scss" scoped>
