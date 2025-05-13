@@ -1,3 +1,4 @@
+/** 接口前缀 */
 export enum ApiPrefixEnum {
   // 大宗前缀
   CTP_PORTAL = '/ctp-portal',

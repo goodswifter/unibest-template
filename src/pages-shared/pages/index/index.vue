@@ -9,4 +9,3 @@
 <template>
   <view>站位分包</view>
 </template>
-<script lang="ts" setup></script>
