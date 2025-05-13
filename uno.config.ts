@@ -50,6 +50,34 @@ export default defineConfig({
     // }) as Preset,
   ],
   theme: {
+    colors: {
+      primary: '#e60012', // 主要颜色
+      secondary: '#', // 次要颜色
+      success: '#', // 成功颜色
+      warning: '#', // 警告颜色
+      danger: '#', // 危险颜色
+      gray: {
+        DEFAULT: '#f1f1f1',
+        100: '#f9f9f9',
+        200: '#f8f8f8', // 表格选中颜色
+        300: '#333', // 全局文字默认颜色
+        400: '#f4f4f4', // 卡片边框颜色
+        500: '#f1f1f1', // 背景颜色
+        600: '#666', // 次文本颜色
+        700: '#e3e3e3', // 表格头背景
+        800: '#eaeaea', // 边框/分割线颜色
+        900: '#999', // 描述文本颜色
+      },
+      red: { DEFAULT: '#e60012' },
+      // 表格
+      table: {
+        header: '#e3e3e3',
+        body: '#f8f8f8',
+        disable: '#f9f9f9',
+      },
+      divider: '#eaeaea',
+      border: '#eaeaea',
+    },
     fontSize: {
       '2xs': '20rpx',
       xs: '24rpx',
@@ -120,6 +148,8 @@ export default defineConfig({
     'bg-color': 'bg-gray-500',
     'bg-gray-light': 'bg-gray-100',
     'el-bg-color': 'bg-bg_color', // 添加 Element Plus 背景颜色快捷方式
+    'text-secondary': 'text-gray-600',
+    'text-desc': 'text-gray-900',
 
     // 动画
     'infinite-rotate': 'transform duration-300 rotate-z-360',
@@ -147,45 +177,6 @@ export default defineConfig({
     ],
     ['pt-safe', { 'padding-top': 'env(safe-area-inset-top)' }],
     ['pb-safe', { 'padding-bottom': 'env(safe-area-inset-bottom)' }],
-    // 匹配 `p-n` 格式，其中 `n` 是动态数值
-    // 边框圆角 border-radius: 简写br
-    [/^rounded-(\d+)$/, ([, n]) => ({ 'border-radius': `${n}px`, overflow: 'hidden' })],
-    // 上边框圆角
-    [
-      /^br-top-(\d+)$/,
-      ([, n]) => ({
-        'border-top-left-radius': `${n}px`,
-        'border-top-right-radius': `${n}px`,
-        overflow: 'hidden',
-      }),
-    ],
-    // 下边框圆角
-    [
-      /^br-bottom-(\d+)$/,
-      ([, n]) => ({
-        'border-bottom-left-radius': `${n}px`,
-        'border-bottom-right-radius': `${n}px`,
-        overflow: 'hidden',
-      }),
-    ],
-    // 左边框圆角
-    [
-      /^br-left-(\d+)$/,
-      ([, n]) => ({
-        'border-top-left-radius': `${n}px`,
-        'border-bottom-left-radius': `${n}px`,
-        overflow: 'hidden',
-      }),
-    ],
-    // 右边框圆角
-    [
-      /^br-right-(\d+)$/,
-      ([, n]) => ({
-        'border-top-right-radius': `${n}px`,
-        'border-bottom-right-radius': `${n}px`,
-        overflow: 'hidden',
-      }),
-    ],
   ],
 })
 

@@ -8,6 +8,7 @@ import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 // 需要与 @uni-helper/vite-plugin-uni-pages 插件一起使用
 import UniPlatform from '@uni-helper/vite-plugin-uni-platform'
 // @see https://github.com/uni-helper/vite-plugin-uni-manifest
+// @ts-expect-error
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
 // @see https://unocss.dev/
 import { visualizer } from 'rollup-plugin-visualizer'

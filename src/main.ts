@@ -1,4 +1,4 @@
-import '@/style/index.scss'
+import '@/styles/index.scss'
 import { VueQueryPlugin } from '@tanstack/vue-query'
 import 'virtual:uno.css'
 import { createSSRApp } from 'vue'
