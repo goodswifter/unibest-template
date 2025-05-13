@@ -12,7 +12,7 @@
     class="overflow-hidden bg-white px-16 pt-8"
     :style="{ marginTop: safeAreaInsets?.top + 'px' }"
   >
-    <view>首页。。。。。。</view>
+    <view class="text-desc">首页。。。。。。</view>
     <view class="my-16 mt-100 flex justify-center">
       <nut-button @click="onToast">toast</nut-button>
     </view>

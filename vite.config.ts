@@ -40,7 +40,7 @@ export default ({ command, mode }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "nutui-uniapp/styles/variables.scss";`,
+          additionalData: `@import '@/styles/variables.scss';`,
         },
       },
     },

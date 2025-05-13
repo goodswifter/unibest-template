@@ -35,6 +35,7 @@
     "src/**/*.jsx",
     "src/**/*.vue",
     "src/**/*.json",
-    "typings/*.d.ts"
+    "typings/*.d.ts",
+    "build/**/*.ts"
   ]
 }
