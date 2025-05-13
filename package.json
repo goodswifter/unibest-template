@@ -69,7 +69,8 @@
     ]
   },
   "resolutions": {
-    "bin-wrapper": "npm:bin-wrapper-china"
+    "bin-wrapper": "npm:bin-wrapper-china",
+    "jest-environment-node": "29.7.0"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4060420250429001",
@@ -90,6 +91,7 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-4060420250429001",
     "@tanstack/vue-query": "^5.75.7",
     "abortcontroller-polyfill": "^1.7.8",
+    "bignumber.js": "^9.3.0",
     "dayjs": "^1.11.10",
     "lodash-es": "^4.17.21",
     "nutui-uniapp": "^1.8.3",
