@@ -1,7 +1,7 @@
 <template>
   <nut-config-provider :theme-vars="themeVars">
     <slot></slot>
-    <!-- <nut-toast /> -->
+    <nut-toast />
   </nut-config-provider>
 </template>
 
