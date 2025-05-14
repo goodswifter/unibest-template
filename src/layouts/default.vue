@@ -1,7 +1,8 @@
 <template>
   <nut-config-provider :theme-vars="themeVars">
     <slot></slot>
-    <!-- <nut-toast /> -->
+    <!-- 打开这一行代码报错 -->
+    <nut-toast />
   </nut-config-provider>
 </template>
 
