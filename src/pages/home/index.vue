@@ -12,16 +12,23 @@
 </route>
 
 <template>
-  <sub-home />
-  <view>首页</view>
+  <nut-input
+    v-model="inputValue"
+    placeholder="在输入时执行格式化"
+    :formatter="formatter"
+    format-trigger="onChange"
+  />
 </template>
 
 <script lang="ts" setup>
-import SubHome from '@/pages-sub/pages/home/index.vue'
+import { ref } from 'vue'
 
-defineOptions({
-  name: 'Home',
-})
+const formatter = (value: string) => {
+  console.log('输入的值: ', value)
+  const content = value.replace(/\D/g, '*')
+  console.log('格式化后的值: ', content)
+  return content
+}
 
-console.log('首页加载完毕')
+const inputValue = ref('')
 </script>
